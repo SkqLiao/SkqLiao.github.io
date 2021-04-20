@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"skqliao.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Apr&#x2F;19&#x2F;2021 21:35-23:50 - Codeforces Round &amp;#35;716 (Div. 2)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round &amp;#35;716 (Div. 2) 总结&amp;题解">
+<meta property="og:url" content="https://skqliao.github.io/2021/04/20/cf-1514/index.html">
+<meta property="og:site_name" content="Skqliao&#39;s Blog">
+<meta property="og:description" content="Apr&#x2F;19&#x2F;2021 21:35-23:50 - Codeforces Round &amp;#35;716 (Div. 2)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-20T06:18:32.000Z">
+<meta property="article:modified_time" content="2021-04-20T07:45:25.953Z">
+<meta property="article:author" content="Jiaqi Liao">
+<meta property="article:tag" content="题解">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://skqliao.github.io/2021/04/20/cf-1514/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Codeforces Round &#35;716 (Div. 2) 总结&题解 | Skqliao's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Skqliao's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://skqliao.github.io/2021/04/20/cf-1514/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jiaqi Liao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skqliao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Codeforces Round &#35;716 (Div. 2) 总结&题解
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-20 14:18:32 / 修改时间：15:45:25" itemprop="dateCreated datePublished" datetime="2021-04-20T14:18:32+08:00">2021-04-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Apr/19/2021 21:35-23:50 - Codeforces Round &#35;716 (Div. 2)</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>晚上在上强化学习技术与应用时，无意间发现九点半有一场Div 2的CF，一看时间还挺合适，就报名了。</p>
+<p>然而没想到半年过去了，打Div 2还是掉分。。</p>
+<h3 id="A-Perfectly-Imperfect-Array"><a href="#A-Perfectly-Imperfect-Array" class="headerlink" title="A - Perfectly Imperfect Array"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1514/problem/A">A - Perfectly Imperfect Array</a></h3><p>给定序列，问其中是否存在一个子序列，使得它的乘积不是完全平方数。</p>
+<p>若序列存在一个数不是完全平方数，则存在（该数），否则不存在（完全平方数的乘积还是完全平方数）。</p>
+<p>21:36 PP，喜提498分。本以为是个良好的开局，没想到竟是巅峰……</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, x; i &lt;= N; ++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">            <span class="keyword">int</span> y = <span class="built_in">sqrt</span>(x);</span><br><span class="line">            <span class="keyword">if</span> (y * y != x) flag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag) <span class="built_in">puts</span>(<span class="string">&quot;YES&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">&quot;NO&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="B-AND-0-Sum-Big"><a href="#B-AND-0-Sum-Big" class="headerlink" title="B - AND 0, Sum Big"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1514/problem/B">B - AND 0, Sum Big</a></h3><p>给定 $n$ 和 $k$，求有多少个长为 $n$ 的序列 $A[1\cdots n]$，满足 $A_i\in [0,2^k)$，所有数的AND值为$0$，且 $\sum{A_i}$ 最大。</p>
+<p>一直在推式子，但是我对和的最大值的认识是错的，因此第二个样例死都过不去。几十分钟过去了，决定暴力DFS找规律。结果一下就找到了，答案是 $n^k$。果然我还是再一次高估了我的数学水平，再说作为Div. 2 B，规律肯定不难找，又naive了。</p>
+<p>原理是这样的。由于所有数的AND为 $0$，因此对于二进制的每一位，都至少有一个数在这一位是 $0$。又因为要和最大，因此是每一位恰好有一个数是 $0$。一共有 $k$ 位，每位有 $n$ 个数可选择，因此是 $n^k$。</p>
+<p>于是本题在 22:23 才过，这波就完全离谱。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N, K;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">poww</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x, <span class="keyword">long</span> <span class="keyword">long</span> t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; t; t &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (t &amp; <span class="number">1</span>) res = res * x % MOD;</span><br><span class="line">        x = x * x % MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;K);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, <span class="built_in">poww</span>(N, K));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="C-Product-1-Modulo-N"><a href="#C-Product-1-Modulo-N" class="headerlink" title="C - Product 1 Modulo N"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1514/problem/C">C - Product 1 Modulo N</a></h3><p>求 $1,2,\cdots, n$ 找到最长子序列 $a_i$，使得 $\prod{a_i}\bmod n=1$。</p>
+<p>根据乘法逆元的知识，若$a\times b\bmod{n}=1$，必然满足 $gcd(a,n)=gcd(b,n)=1$。</p>
+<p>因此 $\forall gcd(a_i,n)=1$。找到 $[1,n]$ 所有满足 $gcd(i,n)=1$ 的 $i$，若它们的乘积是 $x(x\not =1)$，则去掉 $x$ 即可得到结果，反之全部输出。</p>
+<p>其实我早就想到这儿了，我观察到乘积要么是 $1$ 要么是 $n-1$，于是我判定了若乘积为 $n-1$，则删掉 $n-1$。但是一直WA on test 3。懵逼途中，突然意识到当 $n=2$ 的时候，$n-1=1$，我的特判使得我输出了 $0$。</p>
+<p>于是在贡献了四发Wrong answer on pretest 3后，最终在23:02才过。</p>
+<p>我一看排名到了2k+，我就知道这次掉分估计是跑不掉了，除非做出来D。</p>
+<p>然而屋漏偏逢连夜雨，此时理教楼又开始赶人了，我被迫收拾东西，最终搬到了更靠近大门的104。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !y ? x : <span class="built_in">gcd</span>(y, x % y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">set&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">    <span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (N == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;1\n1&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">gcd</span>(i, N) == <span class="number">1</span>) s.<span class="built_in">insert</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> a : s) res = res * a % N;</span><br><span class="line">    <span class="keyword">if</span> (res == N - <span class="number">1</span>) s.<span class="built_in">erase</span>(N - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (<span class="keyword">int</span>)s.<span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> a : s) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="D-Cut-and-Stick"><a href="#D-Cut-and-Stick" class="headerlink" title="D - Cut and Stick"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1514/problem/D">D - Cut and Stick</a></h3><p>给定长为 $n$ 的序列和 $m$ 个询问。每次询问区间 $[l,r]$ 至少拆分成几个子区间，使得每个子区间中不存在出现次数超过区间长度一半（向上取整）的数。</p>
+<p>$n,m\leq 3\times 10^5$</p>
+<p>首先不难发现，一个区间中最多出现一个这样的数，而这个数也是区间的众数。</p>
+<p>因此第一步就是求区间众数的出现次数。这个可以用莫队算法维护，复杂度 $O(n\sqrt{n})$。</p>
+<p>然后考虑如何拆分。</p>
+<p>若 $[l,r]$ 中众数的出现次数不到长度的一半，则输出 $1$，即不用拆分。</p>
+<p>若区间众数出现的次数超过一半，记为 $f$ 次，设区间长度为 $l$。</p>
+<p>则有结论，该区间最少分成 $2f - l$ 个子区间。</p>
+<p>这个证明其实很简单，虽然我考场上还在想着怎么二分去拆。。</p>
+<p>对于一个合法区间，众数 $x$ 的出现次数至多比其他数多 $1$。而在原区间中，众数的出现次数比其他数多了 $f-(l-f)=2f-l$。</p>
+<p>因此需要至少划分出 $2f-l$ 个子区间才能满足条件。</p>
+<p>而这个下限是一定可以取到的。构造方法是，从左往右，每次找到一个非 $x$ 的数，计数器=1，然后向两边为遍历到的数延伸，遇到 $x$ -1，反之+1。当计数器为-1时，划分区间。如此下来，所有非 $x$ 数都有区间，且每个区间都满足 $x$ 比其他数的出现次数大 $1$。而对于剩下的 $x$，每个数一个区间。此时恰好 $2f-l$ 个区间。</p>
+<p>因此划分的复杂度为 $O(m)$，总复杂度为 $O(n\sqrt{n})$。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">3e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">int</span> A[MAXN], Pos[MAXN];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Query</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, id;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Query &amp;x) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Pos[l] == Pos[x.l] ? (r == x.r ? <span class="number">0</span> : (Pos[l] &amp; <span class="number">1</span>) ^ (r &lt; x.r)) : l &lt; x.l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; B[MAXN];</span><br><span class="line"><span class="keyword">int</span> mx, Cnt[MAXN], Num[MAXN], Ans[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> &amp;cx = Cnt[x];</span><br><span class="line">    --Num[cx];</span><br><span class="line">    ++Num[++cx];</span><br><span class="line">    mx = <span class="built_in">max</span>(mx, cx);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> &amp;cx = Cnt[x];</span><br><span class="line">    <span class="keyword">if</span> (mx == cx &amp;&amp; Num[cx] == <span class="number">1</span>) --mx;</span><br><span class="line">    --Num[cx];</span><br><span class="line">    ++Num[--cx];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">    <span class="keyword">int</span> sz = N / <span class="built_in">sqrt</span>(M);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;A[i]);</span><br><span class="line">        Pos[i] = i / sz;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;B[i].l, &amp;B[i].r);</span><br><span class="line">        B[i].id = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(B + <span class="number">1</span>, B + M + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>, r = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (l &gt; B[i].l) <span class="built_in">add</span>(A[--l]);</span><br><span class="line">        <span class="keyword">while</span> (r &lt; B[i].r) <span class="built_in">add</span>(A[++r]);</span><br><span class="line">        <span class="keyword">while</span> (r &gt; B[i].r) <span class="built_in">del</span>(A[r--]);</span><br><span class="line">        <span class="keyword">while</span> (l &lt; B[i].l) <span class="built_in">del</span>(A[l++]);</span><br><span class="line">        <span class="keyword">if</span> (mx &lt;= (B[i].r - B[i].l + <span class="number">2</span>) / <span class="number">2</span>) Ans[B[i].id] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> Ans[B[i].id] = mx * <span class="number">2</span> - (B[i].r - B[i].l + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Ans[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="E-Baby-Ehab’s-Hyper-Apartment"><a href="#E-Baby-Ehab’s-Hyper-Apartment" class="headerlink" title="E - Baby Ehab’s Hyper Apartment"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1514/problem/E">E - Baby Ehab’s Hyper Apartment</a></h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/19/lanqiao2021/" rel="prev" title="蓝桥杯2021省赛游记&个人题解">
+      <i class="fa fa-chevron-left"></i> 蓝桥杯2021省赛游记&个人题解
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Perfectly-Imperfect-Array"><span class="nav-number">1.</span> <span class="nav-text">A - Perfectly Imperfect Array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-AND-0-Sum-Big"><span class="nav-number">2.</span> <span class="nav-text">B - AND 0, Sum Big</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Product-1-Modulo-N"><span class="nav-number">3.</span> <span class="nav-text">C - Product 1 Modulo N</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-Cut-and-Stick"><span class="nav-number">4.</span> <span class="nav-text">D - Cut and Stick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E-Baby-Ehab%E2%80%99s-Hyper-Apartment"><span class="nav-number">5.</span> <span class="nav-text">E - Baby Ehab’s Hyper Apartment</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jiaqi Liao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jiaqi Liao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:skqliao@gmail.com" title="E-Mail → mailto:skqliao@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiaqi Liao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
