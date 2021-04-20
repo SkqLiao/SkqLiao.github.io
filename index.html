@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -163,7 +161,7 @@
     <link itemprop="mainEntityOfPage" href="https://skqliao.github.io/2021/04/19/lanqiao2021/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Jiaqi Liao">
       <meta itemprop="description" content="">
     </span>
@@ -191,7 +189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-20 11:29:52" itemprop="dateModified" datetime="2021-04-20T11:29:52+08:00">2021-04-20</time>
+                <time title="修改时间：2021-04-20 11:38:33" itemprop="dateModified" datetime="2021-04-20T11:38:33+08:00">2021-04-20</time>
               </span>
 
           
@@ -205,28 +203,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <span id="more"></span>
-
-<p>第一次参加，之前一直听说比赛很水，但前一天做了去年的题，最后俩题值能搞到一半的分。。</p>
-<p>我必须先对吐槽一下机房的电脑，4G内存的win7，这配置放到10年前都不过分吧？打开个devCpp花了5分钟，不过好在没有中途去世。</p>
-<p>填空题感觉还行。</p>
-<p>第一题开始以为是输出<code>3182</code>（被样例的<code>11</code>蒙蔽了），考试结束前最后10秒神游的时候，突然想到了什么，把它改成了<code>3181</code>。</p>
-<p>这个真的惊险刺激。我考前发现电脑的时间不对，于是就调了一下小时和分钟，但是秒针校正有点麻烦，所以我就没调。因此电脑时间实际上快了20秒。在比赛结束前30秒我在神游的时候，突然意识到第一题似乎有点奇怪，仔细一看发现果然不对。想改的时候一看时间刚好从12:59变成13:00，心想彻底凉了。但是我抱着侥幸的心理尝试去修改答案，没想到真的成功修改了，我这才想起来这个时间快了20秒。真是大起大落。</p>
-<p>第二题，把所有直线表示成 $y=\frac{a}{b}\times x + \frac{c}{d}$ 的形式，用<code>vector</code> 去存这俩分数。然而我第一次写的时候翻了个脑瘫错误，对分数约分的时候是这么写的：</p>
-<p><code>u /= __gcd(u, d), d /= __gcd(u, d);</code></p>
-<p>这里的第二个<code>gcd(u,d)</code>的<code>u</code>已经不是原来的<code>u</code>了。好在最后半个小时手动去数在<code>x=3 y=4</code>情况下所有直线的时候，发现了奇怪的分数$y=\frac{1}{-1}\times x+\frac{1}{2}$，而这条线肯定不存在。修正后结果是<code>40257</code>。</p>
-<p>第三题，欧拉筛$\sqrt{n}$以下的质数，然后对$n$做质因数分解。我发现因数很少，于是直接dfs枚举ABC，得到<code>2430</code>。</p>
-<p>第四题建图，然后写个最短路，结果是<code>10266837</code>。</p>
-<p>第五题开始做的时候还没清醒，想要暴力DFS慢慢跑，但是跑了几十分钟也没跑出来。后来回过神来一看，TSP问题不是可以状压吗？于是 $O(n\times 2^n)$ 写了一发，1秒就跑出来了。和之前dfs的做法在$n$比较小的时候对拍了一下，一模一样美滋滋，得到结果<code>881012367360</code>。</p>
-<p>代码题我就naive了。</p>
-<p>第一题天平，开始写了个<code>set</code>来回跑，造了个大数据发现跑的好慢。后来发现还不如直接数组遍历，复杂度 $O(n\sum{w_i})$。</p>
-<p>第二题博弈论，一看异或我就想到了从高位往低位跑。得到结论，如果所有数异或值为 $0$，则平局，否则Alice胜。我还以为终于碰到了我会做的博弈论。然而赛后在群里讨论，发现我的结论出了问题，没有考虑出现$0$意味着交换先后手，所以Bob可能赢。这还多组数据，我估计要爬了。</p>
-<p>第三题左儿子右兄弟，普及组的树形DP。每次把深度最大的儿子放在最下面，那么它的高度就是它的儿子个数+最高的儿子的高度。$f(x)=|son(x)|+\max\limits_{v\in son(x)}{f(v)}$，复杂度 $O(n)$。</p>
-<p>第四题括号序，看了一眼本来想分段，但是思路不太清晰没有讨论出来。最后干脆输出<code>0</code>。感觉我确实菜。</p>
-<p>第五题分糖果，数据范围说$w$随机生成我就觉得很有灵性，但是并不知道怎么做，感觉像是个分段的DP。写了个dfs，发现$n=30$跑起来也飞快，估计能搞到一点分。</p>
-<p>估分45+15+0+20+0+25*0.5=90。</p>
-<p>总的来说，感觉比去年的题难不少，没啥送分题。不过金牌爷们都打EC Final去了，大概捞个奖问题不大。</p>
-
+          <p>2021.04.18 第十二届蓝桥杯——C/C++程序设计（省赛）大学A组</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/19/lanqiao2021/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -299,6 +284,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jiaqi Liao"
+      src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Jiaqi Liao</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -319,6 +306,11 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:skqliao@gmail.com" title="E-Mail → mailto:skqliao@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
 
 
 
