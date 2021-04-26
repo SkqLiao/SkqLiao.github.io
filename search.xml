@@ -475,6 +475,7 @@
     <content><![CDATA[<p>在Codeforce上EDU上看到了<a href="https://codeforces.com/edu/course/2">ITMO Academy: pilot course</a>，于是就点进去看了看。</p>
 <p>发现有<a href="https://codeforces.com/edu/course/2/lesson/2">Suffix Array</a>、<a href="https://codeforces.com/edu/course/2/lesson/4">Segment Tree, part 1</a>、<a href="https://codeforces.com/edu/course/2/lesson/5">Segment Tree, part 2</a>、<a href="https://codeforces.com/edu/course/2/lesson/6">Binary Search</a>、<a href="https://codeforces.com/edu/course/2/lesson/7">Disjoint Sets Union</a>和<a href="https://codeforces.com/edu/course/2/lesson/9">Two Pointers Method</a>，有相应的video、note和practice。</p>
 <p>想到今早LeetCode周赛上暴力过了的two pointers的题，于是就先开了这个。不出意外的话，应该会刷完这五个专题。</p>
+<p>前面全是简单题，一个有趣的technique详见Step2的【Coprime Segment】。</p>
 <h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a><a href="https://codeforces.com/edu/course/2/lesson/9/1">Step 1</a></h2><p>Step 1是最基本的two pointers问题，也没啥感想，就不写题解了。</p>
 <h3 id="Merging-Arrays"><a href="#Merging-Arrays" class="headerlink" title="Merging Arrays"></a><a href="https://codeforces.com/edu/course/2/lesson/9/1/practice/contest/307092/problem/A">Merging Arrays</a></h3><div class="note info"><p>合并两个有序序列。</p>
 </div>
