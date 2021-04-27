@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>一个高效维护Two Pointer Method区间信息的数据结构</title>
+    <url>/2021/04/27/a-high-efficiency-data-structure-for-two-pointers-method/</url>
+    <content><![CDATA[<p>这两天思考了一波，发现CF EDU上的这个结构确实很powerful，可以快速维护大部分双指针算法所需的区间信息。</p>
+<p>初稿可见<a href="/2021/04/25/ITMO-Academy-pilot-course-Two-Pointers-Method/">Two Pointers Method 学习记录 - Coprime Segment</a> 那节，解释了如何用它来维护区间GCD，但是写的很乱，感觉没有说清楚。</p>
+<p>鉴于它的实用性很强，故单独成篇更加系统地阐述这一结构的原理和适用范围。</p>
+<p>坑代填。</p>
+]]></content>
+      <categories>
+        <category>data structure</category>
+      </categories>
+      <tags>
+        <tag>two pointers method</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AtCoder Beginner Contest 199 总结&amp;题解</title>
     <url>/2021/04/24/abc-199/</url>
     <content><![CDATA[<p>下午打完天梯赛，似乎最后一题数据假了，要重测。。</p>
@@ -65,85 +80,6 @@
       </categories>
       <tags>
         <tag>矩阵快速幂(fast exponentiation)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Codeforces Round &amp;#35;716 (Div. 2) 总结&amp;题解</title>
-    <url>/2021/04/20/cf-1514/</url>
-    <content><![CDATA[<p>晚上在上强化学习技术与应用时，无意间发现九点半有一场Div 2的CF，一看时间还挺合适，就报名了。</p>
-<p>然而没想到半年过去了，打Div 2还是掉分。。</p>
-<p>upd: 喜提rank2306、rating -50。</p>
-<h3 id="A-Perfectly-Imperfect-Array"><a href="#A-Perfectly-Imperfect-Array" class="headerlink" title="A - Perfectly Imperfect Array"></a><a href="https://codeforces.com/contest/1514/problem/A">A - Perfectly Imperfect Array</a></h3><div class="note info"><p>给定序列，问其中是否存在一个子序列，使得它的乘积不是完全平方数。</p>
-</div>
-
-<p>若序列存在一个数不是完全平方数，则存在（该数），否则不存在（完全平方数的乘积还是完全平方数）。</p>
-<p>21:36 PP，喜提498分。本以为是个良好的开局，没想到竟是巅峰……</p>
-<details class="note success no-icon"><summary><p>Code</p>
-</summary>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, x; i &lt;= N; ++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">            <span class="keyword">int</span> y = <span class="built_in">sqrt</span>(x);</span><br><span class="line">            <span class="keyword">if</span> (y * y != x) flag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag) <span class="built_in">puts</span>(<span class="string">&quot;YES&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">&quot;NO&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-<h3 id="B-AND-0-Sum-Big"><a href="#B-AND-0-Sum-Big" class="headerlink" title="B - AND 0, Sum Big"></a><a href="https://codeforces.com/contest/1514/problem/B">B - AND 0, Sum Big</a></h3><div class="note info"><p>给定 $n$ 和 $k$，求有多少个长为 $n$ 的序列 $A[1\cdots n]$，满足 $A_i\in [0,2^k)$，所有数的AND值为$0$，且 $\sum{A_i}$ 最大。</p>
-</div>
-
-<p>一直在推式子，但是我对和的最大值的认识是错的，因此第二个样例死都过不去。几十分钟过去了，决定暴力DFS找规律。结果一下就找到了，答案是 $n^k$。果然我还是再一次高估了我的数学水平，再说作为Div. 2 B，规律肯定不难找，又naive了。</p>
-<p>原理是这样的。由于所有数的AND为 $0$，因此对于二进制的每一位，都至少有一个数在这一位是 $0$。又因为要和最大，因此是每一位恰好有一个数是 $0$。一共有 $k$ 位，每位有 $n$ 个数可选择，因此是 $n^k$。</p>
-<p>于是本题在 22:23 才过，这波就完全离谱。</p>
-<details class="note success no-icon"><summary><p>Code</p>
-</summary>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N, K;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">poww</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x, <span class="keyword">long</span> <span class="keyword">long</span> t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; t; t &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (t &amp; <span class="number">1</span>) res = res * x % MOD;</span><br><span class="line">        x = x * x % MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;K);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, <span class="built_in">poww</span>(N, K));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-<h3 id="C-Product-1-Modulo-N"><a href="#C-Product-1-Modulo-N" class="headerlink" title="C - Product 1 Modulo N"></a><a href="https://codeforces.com/contest/1514/problem/C">C - Product 1 Modulo N</a></h3><div class="note info"><p>在序列 $1,2,\cdots, n$ 中找到最长子序列 $a_i$，使得 $\prod{a_i}\bmod n=1$。</p>
-<p>$n\leq 10^5$</p>
-</div>
-
-<p>根据乘法逆元的知识，若$a\times b\bmod{n}=1$，必然满足 $gcd(a,n)=gcd(b,n)=1$。</p>
-<p>因此 $\forall gcd(a_i,n)=1$。找到 $[1,n]$ 所有满足 $gcd(i,n)=1$ 的 $i$，若它们的乘积是 $x(x\not =1)$，则去掉 $x$ 即可得到结果，反之全部输出。</p>
-<p>其实我早就想到这儿了，我观察到乘积要么是 $1$ 要么是 $n-1$，于是我判定了若乘积为 $n-1$，则删掉 $n-1$。但是一直WA on test 3。懵逼途中，突然意识到当 $n=2$ 的时候，$n-1=1$，我的特判使得我输出了 $0$。</p>
-<p>于是在贡献了四发Wrong answer on pretest 3后，最终在23:02才过。</p>
-<p>我一看排名到了2k+，我就知道这次掉分估计是跑不掉了，除非做出来D。</p>
-<p>然而屋漏偏逢连夜雨，此时理教楼又开始赶人了，我被迫收拾东西，最终搬到了更靠近大门的104。</p>
-<details class="note success no-icon"><summary><p>Code</p>
-</summary>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !y ? x : <span class="built_in">gcd</span>(y, x % y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">set&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">    <span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (N == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;1\n1&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">gcd</span>(i, N) == <span class="number">1</span>) s.<span class="built_in">insert</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> a : s) res = res * a % N;</span><br><span class="line">    <span class="keyword">if</span> (res == N - <span class="number">1</span>) s.<span class="built_in">erase</span>(N - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (<span class="keyword">int</span>)s.<span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> a : s) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-<div class="note danger"><p><strong>Bonus task: $n\leq 10^{12}$ 的做法</strong></p>
-</div>
-
-<p>坑代填。</p>
-<h3 id="D-Cut-and-Stick"><a href="#D-Cut-and-Stick" class="headerlink" title="D - Cut and Stick"></a><a href="https://codeforces.com/contest/1514/problem/D">D - Cut and Stick</a></h3><div class="note info"><p>给定长为 $n$ 的序列和 $m$ 个询问。每次询问区间 $[l,r]$ 至少拆分成几个子区间，使得每个子区间中不存在出现次数超过区间长度一半（向上取整）的数。</p>
-<p>$n,m\leq 3\times 10^5$</p>
-</div>
-
-<p>首先不难发现，一个区间中最多出现一个这样的数，而这个数也是区间的众数。</p>
-<p>因此第一步就是求区间众数的出现次数。这个可以用莫队算法维护，复杂度 $O(n\sqrt{n})$。</p>
-<p>然后考虑如何拆分。</p>
-<p>若 $[l,r]$ 中众数的出现次数不到长度的一半，则输出 $1$，即不用拆分。</p>
-<p>若区间众数出现的次数超过一半，记为 $f$ 次，设区间长度为 $l$。</p>
-<p>则有结论，该区间最少分成 $2f - l$ 个子区间。</p>
-<p>这个证明其实很简单，虽然我考场上还在想着怎么二分去拆。。</p>
-<p>对于一个合法区间，众数 $x$ 的出现次数至多比其他数多 $1$。而在原区间中，众数的出现次数比其他数多了 $f-(l-f)=2f-l$。</p>
-<p>因此需要至少划分出 $2f-l$ 个子区间才能满足条件。</p>
-<p>而这个下限是一定可以取到的。构造方法是，从左往右，每次找到一个非 $x$ 的数，计数器=1，然后向两边为遍历到的数延伸，遇到 $x$ -1，反之+1。当计数器为-1时，划分区间。如此下来，所有非 $x$ 数都有区间，且每个区间都满足 $x$ 比其他数的出现次数大 $1$。而对于剩下的 $x$，每个数一个区间。此时恰好 $2f-l$ 个区间。</p>
-<p>因此划分的复杂度为 $O(m)$，总复杂度为 $O(n\sqrt{n})$。</p>
-<details class="note success no-icon"><summary><p>Code</p>
-</summary>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">3e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">int</span> A[MAXN], Pos[MAXN];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Query</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, id;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Query &amp;x) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Pos[l] == Pos[x.l] ? (r == x.r ? <span class="number">0</span> : (Pos[l] &amp; <span class="number">1</span>) ^ (r &lt; x.r)) : l &lt; x.l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; B[MAXN];</span><br><span class="line"><span class="keyword">int</span> mx, Cnt[MAXN], Num[MAXN], Ans[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> &amp;cx = Cnt[x];</span><br><span class="line">    --Num[cx];</span><br><span class="line">    ++Num[++cx];</span><br><span class="line">    mx = <span class="built_in">max</span>(mx, cx);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> &amp;cx = Cnt[x];</span><br><span class="line">    <span class="keyword">if</span> (mx == cx &amp;&amp; Num[cx] == <span class="number">1</span>) --mx;</span><br><span class="line">    --Num[cx];</span><br><span class="line">    ++Num[--cx];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">    <span class="keyword">int</span> sz = N / <span class="built_in">sqrt</span>(M);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;A[i]);</span><br><span class="line">        Pos[i] = i / sz;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;B[i].l, &amp;B[i].r);</span><br><span class="line">        B[i].id = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(B + <span class="number">1</span>, B + M + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>, r = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (l &gt; B[i].l) <span class="built_in">add</span>(A[--l]);</span><br><span class="line">        <span class="keyword">while</span> (r &lt; B[i].r) <span class="built_in">add</span>(A[++r]);</span><br><span class="line">        <span class="keyword">while</span> (r &gt; B[i].r) <span class="built_in">del</span>(A[r--]);</span><br><span class="line">        <span class="keyword">while</span> (l &lt; B[i].l) <span class="built_in">del</span>(A[l++]);</span><br><span class="line">        <span class="keyword">if</span> (mx &lt;= (B[i].r - B[i].l + <span class="number">2</span>) / <span class="number">2</span>) Ans[B[i].id] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> Ans[B[i].id] = mx * <span class="number">2</span> - (B[i].r - B[i].l + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Ans[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-<div class="note danger no-icon"><p><strong>Bonus task: $O(n\log{n})$ 做法​</strong></p>
-</div>
-
-<p>坑代填。</p>
-<h3 id="E-Baby-Ehab’s-Hyper-Apartment"><a href="#E-Baby-Ehab’s-Hyper-Apartment" class="headerlink" title="E - Baby Ehab’s Hyper Apartment"></a><a href="https://codeforces.com/contest/1514/problem/E">E - Baby Ehab’s Hyper Apartment</a></h3><p>还不会做，坑代填。</p>
-]]></content>
-      <categories>
-        <category>Codeforces</category>
-      </categories>
-      <tags>
-        <tag>莫队(Mo&#39;s Algorithm)</tag>
       </tags>
   </entry>
   <entry>
@@ -238,6 +174,85 @@
       </categories>
       <tags>
         <tag>倍增(binary lifting)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Codeforces Round &amp;#35;716 (Div. 2) 总结&amp;题解</title>
+    <url>/2021/04/20/cf-1514/</url>
+    <content><![CDATA[<p>晚上在上强化学习技术与应用时，无意间发现九点半有一场Div 2的CF，一看时间还挺合适，就报名了。</p>
+<p>然而没想到半年过去了，打Div 2还是掉分。。</p>
+<p>upd: 喜提rank2306、rating -50。</p>
+<h3 id="A-Perfectly-Imperfect-Array"><a href="#A-Perfectly-Imperfect-Array" class="headerlink" title="A - Perfectly Imperfect Array"></a><a href="https://codeforces.com/contest/1514/problem/A">A - Perfectly Imperfect Array</a></h3><div class="note info"><p>给定序列，问其中是否存在一个子序列，使得它的乘积不是完全平方数。</p>
+</div>
+
+<p>若序列存在一个数不是完全平方数，则存在（该数），否则不存在（完全平方数的乘积还是完全平方数）。</p>
+<p>21:36 PP，喜提498分。本以为是个良好的开局，没想到竟是巅峰……</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, x; i &lt;= N; ++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">            <span class="keyword">int</span> y = <span class="built_in">sqrt</span>(x);</span><br><span class="line">            <span class="keyword">if</span> (y * y != x) flag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag) <span class="built_in">puts</span>(<span class="string">&quot;YES&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">&quot;NO&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h3 id="B-AND-0-Sum-Big"><a href="#B-AND-0-Sum-Big" class="headerlink" title="B - AND 0, Sum Big"></a><a href="https://codeforces.com/contest/1514/problem/B">B - AND 0, Sum Big</a></h3><div class="note info"><p>给定 $n$ 和 $k$，求有多少个长为 $n$ 的序列 $A[1\cdots n]$，满足 $A_i\in [0,2^k)$，所有数的AND值为$0$，且 $\sum{A_i}$ 最大。</p>
+</div>
+
+<p>一直在推式子，但是我对和的最大值的认识是错的，因此第二个样例死都过不去。几十分钟过去了，决定暴力DFS找规律。结果一下就找到了，答案是 $n^k$。果然我还是再一次高估了我的数学水平，再说作为Div. 2 B，规律肯定不难找，又naive了。</p>
+<p>原理是这样的。由于所有数的AND为 $0$，因此对于二进制的每一位，都至少有一个数在这一位是 $0$。又因为要和最大，因此是每一位恰好有一个数是 $0$。一共有 $k$ 位，每位有 $n$ 个数可选择，因此是 $n^k$。</p>
+<p>于是本题在 22:23 才过，这波就完全离谱。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N, K;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">poww</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x, <span class="keyword">long</span> <span class="keyword">long</span> t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; t; t &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (t &amp; <span class="number">1</span>) res = res * x % MOD;</span><br><span class="line">        x = x * x % MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;K);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, <span class="built_in">poww</span>(N, K));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h3 id="C-Product-1-Modulo-N"><a href="#C-Product-1-Modulo-N" class="headerlink" title="C - Product 1 Modulo N"></a><a href="https://codeforces.com/contest/1514/problem/C">C - Product 1 Modulo N</a></h3><div class="note info"><p>在序列 $1,2,\cdots, n$ 中找到最长子序列 $a_i$，使得 $\prod{a_i}\bmod n=1$。</p>
+<p>$n\leq 10^5$</p>
+</div>
+
+<p>根据乘法逆元的知识，若$a\times b\bmod{n}=1$，必然满足 $gcd(a,n)=gcd(b,n)=1$。</p>
+<p>因此 $\forall gcd(a_i,n)=1$。找到 $[1,n]$ 所有满足 $gcd(i,n)=1$ 的 $i$，若它们的乘积是 $x(x\not =1)$，则去掉 $x$ 即可得到结果，反之全部输出。</p>
+<p>其实我早就想到这儿了，我观察到乘积要么是 $1$ 要么是 $n-1$，于是我判定了若乘积为 $n-1$，则删掉 $n-1$。但是一直WA on test 3。懵逼途中，突然意识到当 $n=2$ 的时候，$n-1=1$，我的特判使得我输出了 $0$。</p>
+<p>于是在贡献了四发Wrong answer on pretest 3后，最终在23:02才过。</p>
+<p>我一看排名到了2k+，我就知道这次掉分估计是跑不掉了，除非做出来D。</p>
+<p>然而屋漏偏逢连夜雨，此时理教楼又开始赶人了，我被迫收拾东西，最终搬到了更靠近大门的104。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !y ? x : <span class="built_in">gcd</span>(y, x % y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">set&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">    <span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (N == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;1\n1&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">gcd</span>(i, N) == <span class="number">1</span>) s.<span class="built_in">insert</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> a : s) res = res * a % N;</span><br><span class="line">    <span class="keyword">if</span> (res == N - <span class="number">1</span>) s.<span class="built_in">erase</span>(N - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (<span class="keyword">int</span>)s.<span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> a : s) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<div class="note danger"><p><strong>Bonus task: $n\leq 10^{12}$ 的做法</strong></p>
+</div>
+
+<p>坑代填。</p>
+<h3 id="D-Cut-and-Stick"><a href="#D-Cut-and-Stick" class="headerlink" title="D - Cut and Stick"></a><a href="https://codeforces.com/contest/1514/problem/D">D - Cut and Stick</a></h3><div class="note info"><p>给定长为 $n$ 的序列和 $m$ 个询问。每次询问区间 $[l,r]$ 至少拆分成几个子区间，使得每个子区间中不存在出现次数超过区间长度一半（向上取整）的数。</p>
+<p>$n,m\leq 3\times 10^5$</p>
+</div>
+
+<p>首先不难发现，一个区间中最多出现一个这样的数，而这个数也是区间的众数。</p>
+<p>因此第一步就是求区间众数的出现次数。这个可以用莫队算法维护，复杂度 $O(n\sqrt{n})$。</p>
+<p>然后考虑如何拆分。</p>
+<p>若 $[l,r]$ 中众数的出现次数不到长度的一半，则输出 $1$，即不用拆分。</p>
+<p>若区间众数出现的次数超过一半，记为 $f$ 次，设区间长度为 $l$。</p>
+<p>则有结论，该区间最少分成 $2f - l$ 个子区间。</p>
+<p>这个证明其实很简单，虽然我考场上还在想着怎么二分去拆。。</p>
+<p>对于一个合法区间，众数 $x$ 的出现次数至多比其他数多 $1$。而在原区间中，众数的出现次数比其他数多了 $f-(l-f)=2f-l$。</p>
+<p>因此需要至少划分出 $2f-l$ 个子区间才能满足条件。</p>
+<p>而这个下限是一定可以取到的。构造方法是，从左往右，每次找到一个非 $x$ 的数，计数器=1，然后向两边为遍历到的数延伸，遇到 $x$ -1，反之+1。当计数器为-1时，划分区间。如此下来，所有非 $x$ 数都有区间，且每个区间都满足 $x$ 比其他数的出现次数大 $1$。而对于剩下的 $x$，每个数一个区间。此时恰好 $2f-l$ 个区间。</p>
+<p>因此划分的复杂度为 $O(m)$，总复杂度为 $O(n\sqrt{n})$。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-04-19 21:35:00</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">3e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">int</span> A[MAXN], Pos[MAXN];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Query</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, id;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Query &amp;x) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Pos[l] == Pos[x.l] ? (r == x.r ? <span class="number">0</span> : (Pos[l] &amp; <span class="number">1</span>) ^ (r &lt; x.r)) : l &lt; x.l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; B[MAXN];</span><br><span class="line"><span class="keyword">int</span> mx, Cnt[MAXN], Num[MAXN], Ans[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> &amp;cx = Cnt[x];</span><br><span class="line">    --Num[cx];</span><br><span class="line">    ++Num[++cx];</span><br><span class="line">    mx = <span class="built_in">max</span>(mx, cx);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> &amp;cx = Cnt[x];</span><br><span class="line">    <span class="keyword">if</span> (mx == cx &amp;&amp; Num[cx] == <span class="number">1</span>) --mx;</span><br><span class="line">    --Num[cx];</span><br><span class="line">    ++Num[--cx];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">    <span class="keyword">int</span> sz = N / <span class="built_in">sqrt</span>(M);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;A[i]);</span><br><span class="line">        Pos[i] = i / sz;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;B[i].l, &amp;B[i].r);</span><br><span class="line">        B[i].id = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(B + <span class="number">1</span>, B + M + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>, r = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (l &gt; B[i].l) <span class="built_in">add</span>(A[--l]);</span><br><span class="line">        <span class="keyword">while</span> (r &lt; B[i].r) <span class="built_in">add</span>(A[++r]);</span><br><span class="line">        <span class="keyword">while</span> (r &gt; B[i].r) <span class="built_in">del</span>(A[r--]);</span><br><span class="line">        <span class="keyword">while</span> (l &lt; B[i].l) <span class="built_in">del</span>(A[l++]);</span><br><span class="line">        <span class="keyword">if</span> (mx &lt;= (B[i].r - B[i].l + <span class="number">2</span>) / <span class="number">2</span>) Ans[B[i].id] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> Ans[B[i].id] = mx * <span class="number">2</span> - (B[i].r - B[i].l + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Ans[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<div class="note danger no-icon"><p><strong>Bonus task: $O(n\log{n})$ 做法​</strong></p>
+</div>
+
+<p>坑代填。</p>
+<h3 id="E-Baby-Ehab’s-Hyper-Apartment"><a href="#E-Baby-Ehab’s-Hyper-Apartment" class="headerlink" title="E - Baby Ehab’s Hyper Apartment"></a><a href="https://codeforces.com/contest/1514/problem/E">E - Baby Ehab’s Hyper Apartment</a></h3><p>还不会做，坑代填。</p>
+]]></content>
+      <categories>
+        <category>Codeforces</category>
+      </categories>
+      <tags>
+        <tag>莫队(Mo&#39;s Algorithm)</tag>
       </tags>
   </entry>
   <entry>
@@ -400,6 +415,33 @@
       </categories>
   </entry>
   <entry>
+    <title>蓝桥杯2021省赛 游记&amp;题解</title>
+    <url>/2021/04/19/lanqiao-2021/</url>
+    <content><![CDATA[<p>虽然之前一直听说这个比赛很水，但是比赛前一天做了下去年的题，发现最后俩题也只能搞到一半的分。</p>
+<p>我必须先对吐槽一下机房的电脑，4G内存的win7，这配置放到10年前都不过分吧？打开个devCpp和Chrome花了5分钟，不过好在没有在比赛中途去世。</p>
+<p>填空题感觉还行。</p>
+<p>第一题开始以为是输出<code>3182</code>（被样例的<code>11</code>蒙蔽了），考试结束前最后10秒神游的时候，突然想到了什么，把它改成了<code>3181</code>。</p>
+<p>这个真的惊险刺激。我考前发现电脑的时间不对，于是就调了一下小时和分钟，但是秒针校正有点麻烦，所以我就没调。因此电脑时间实际上快了20秒。在比赛结束前30秒我在神游的时候，突然意识到第一题似乎有点奇怪，仔细一看发现果然不对。想改的时候一看时间刚好从12:59变成13:00，心想彻底凉了。但是我抱着侥幸的心理尝试去修改答案，没想到真的成功修改了，我这才想起来这个时间快了20秒。真是大起大落。</p>
+<p>第二题，把所有直线表示成 $y=\frac{a}{b}\times x + \frac{c}{d}$ 的形式，用<code>vector</code> 去存这俩分数。然而我第一次写的时候翻了个脑瘫错误，对分数约分的时候是这么写的：</p>
+<p><code>u /= __gcd(u, d), d /= __gcd(u, d);</code></p>
+<p>这里的第二个<code>gcd(u,d)</code>的<code>u</code>已经不是原来的<code>u</code>了。好在最后半个小时手动去数在<code>x=3 y=4</code>情况下所有直线的时候，发现了奇怪的分数$y=\frac{1}{-1}\times x+\frac{1}{2}$，而这条线肯定不存在。修正后结果是<code>40257</code>。</p>
+<p>第三题，欧拉筛$\sqrt{n}$以下的质数，然后对$n$做质因数分解。我发现因数很少，于是直接dfs枚举ABC，得到<code>2430</code>。</p>
+<p>第四题建图，然后写个最短路，结果是<code>10266837</code>。</p>
+<p>第五题开始做的时候还没清醒，想要暴力DFS慢慢跑，但是跑了几十分钟也没跑出来。后来回过神来一看，TSP问题不是可以状压吗？于是 $O(n\times 2^n)$ 写了一发，1秒就跑出来了。和之前dfs的做法在$n$比较小的时候对拍了一下，一模一样美滋滋，得到结果<code>881012367360</code>。</p>
+<p>代码题我就naive了。</p>
+<p>第一题天平，开始写了个<code>set</code>来回跑，造了个大数据发现跑的好慢。后来发现还不如直接数组遍历，复杂度 $O(n\sum{w_i})$。</p>
+<p>第二题博弈论，一看异或我就想到了从高位往低位跑。得到结论，如果所有数异或值为 $0$，则平局，否则Alice胜。我还以为终于碰到了我会做的博弈论。然而赛后在群里讨论，发现我的结论出了问题，没有考虑出现$0$意味着交换先后手，所以Bob可能赢。这还多组数据，我估计要爬了。</p>
+<p>第三题左儿子右兄弟，普及组的树形DP。每次把深度最大的儿子放在最下面，那么它的高度就是它的儿子个数+最高的儿子的高度。$f(x)=|son(x)|+\max\limits_{v\in son(x)}{f(v)}$，复杂度 $O(n)$。</p>
+<p>第四题括号序，看了一眼本来想分段，但是思路不太清晰没有讨论出来。最后干脆输出<code>0</code>。感觉我确实菜。</p>
+<p>第五题分糖果，数据范围说$w$随机生成我就觉得很有灵性，但是并不知道怎么做，感觉像是个分段的DP。写了个dfs，发现$n=30$跑起来也飞快，估计能搞到一点分。</p>
+<p>估分45+15+0+20+0+25*0.5=90。</p>
+<p>总的来说，感觉比去年的题难不少，没啥送分题。不过金牌爷们都打EC Final去了，大概捞个奖问题不大。</p>
+]]></content>
+      <categories>
+        <category>游记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>第 238 场力扣周赛 总结&amp;题解</title>
     <url>/2021/04/25/lc-wc-238/</url>
     <content><![CDATA[<p>大周日的，为了五一的调休还上课，真离谱。。</p>
@@ -440,33 +482,6 @@
 ]]></content>
       <categories>
         <category>LeetCode</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>蓝桥杯2021省赛 游记&amp;题解</title>
-    <url>/2021/04/19/lanqiao-2021/</url>
-    <content><![CDATA[<p>虽然之前一直听说这个比赛很水，但是比赛前一天做了下去年的题，发现最后俩题也只能搞到一半的分。</p>
-<p>我必须先对吐槽一下机房的电脑，4G内存的win7，这配置放到10年前都不过分吧？打开个devCpp和Chrome花了5分钟，不过好在没有在比赛中途去世。</p>
-<p>填空题感觉还行。</p>
-<p>第一题开始以为是输出<code>3182</code>（被样例的<code>11</code>蒙蔽了），考试结束前最后10秒神游的时候，突然想到了什么，把它改成了<code>3181</code>。</p>
-<p>这个真的惊险刺激。我考前发现电脑的时间不对，于是就调了一下小时和分钟，但是秒针校正有点麻烦，所以我就没调。因此电脑时间实际上快了20秒。在比赛结束前30秒我在神游的时候，突然意识到第一题似乎有点奇怪，仔细一看发现果然不对。想改的时候一看时间刚好从12:59变成13:00，心想彻底凉了。但是我抱着侥幸的心理尝试去修改答案，没想到真的成功修改了，我这才想起来这个时间快了20秒。真是大起大落。</p>
-<p>第二题，把所有直线表示成 $y=\frac{a}{b}\times x + \frac{c}{d}$ 的形式，用<code>vector</code> 去存这俩分数。然而我第一次写的时候翻了个脑瘫错误，对分数约分的时候是这么写的：</p>
-<p><code>u /= __gcd(u, d), d /= __gcd(u, d);</code></p>
-<p>这里的第二个<code>gcd(u,d)</code>的<code>u</code>已经不是原来的<code>u</code>了。好在最后半个小时手动去数在<code>x=3 y=4</code>情况下所有直线的时候，发现了奇怪的分数$y=\frac{1}{-1}\times x+\frac{1}{2}$，而这条线肯定不存在。修正后结果是<code>40257</code>。</p>
-<p>第三题，欧拉筛$\sqrt{n}$以下的质数，然后对$n$做质因数分解。我发现因数很少，于是直接dfs枚举ABC，得到<code>2430</code>。</p>
-<p>第四题建图，然后写个最短路，结果是<code>10266837</code>。</p>
-<p>第五题开始做的时候还没清醒，想要暴力DFS慢慢跑，但是跑了几十分钟也没跑出来。后来回过神来一看，TSP问题不是可以状压吗？于是 $O(n\times 2^n)$ 写了一发，1秒就跑出来了。和之前dfs的做法在$n$比较小的时候对拍了一下，一模一样美滋滋，得到结果<code>881012367360</code>。</p>
-<p>代码题我就naive了。</p>
-<p>第一题天平，开始写了个<code>set</code>来回跑，造了个大数据发现跑的好慢。后来发现还不如直接数组遍历，复杂度 $O(n\sum{w_i})$。</p>
-<p>第二题博弈论，一看异或我就想到了从高位往低位跑。得到结论，如果所有数异或值为 $0$，则平局，否则Alice胜。我还以为终于碰到了我会做的博弈论。然而赛后在群里讨论，发现我的结论出了问题，没有考虑出现$0$意味着交换先后手，所以Bob可能赢。这还多组数据，我估计要爬了。</p>
-<p>第三题左儿子右兄弟，普及组的树形DP。每次把深度最大的儿子放在最下面，那么它的高度就是它的儿子个数+最高的儿子的高度。$f(x)=|son(x)|+\max\limits_{v\in son(x)}{f(v)}$，复杂度 $O(n)$。</p>
-<p>第四题括号序，看了一眼本来想分段，但是思路不太清晰没有讨论出来。最后干脆输出<code>0</code>。感觉我确实菜。</p>
-<p>第五题分糖果，数据范围说$w$随机生成我就觉得很有灵性，但是并不知道怎么做，感觉像是个分段的DP。写了个dfs，发现$n=30$跑起来也飞快，估计能搞到一点分。</p>
-<p>估分45+15+0+20+0+25*0.5=90。</p>
-<p>总的来说，感觉比去年的题难不少，没啥送分题。不过金牌爷们都打EC Final去了，大概捞个奖问题不大。</p>
-]]></content>
-      <categories>
-        <category>游记</category>
       </categories>
   </entry>
   <entry>
@@ -611,7 +626,7 @@
         <category>ITMO Academy&amp;#58; pilot course</category>
       </categories>
       <tags>
-        <tag>two pointers</tag>
+        <tag>two pointers methods</tag>
       </tags>
   </entry>
 </search>
