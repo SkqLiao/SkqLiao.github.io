@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CF EDU - Disjoint Sets Union 学习记录</title>
+    <url>/2021/05/01/ITMO-Disjoint-Sets-Union/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>ITMO Academy&amp;#58; pilot course</category>
+      </categories>
+      <tags>
+        <tag>并查集(disjoint sets union)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AtCoder Beginner Contest 199 总结&amp;题解</title>
     <url>/2021/04/24/abc-199/</url>
     <content><![CDATA[<p>下午打完天梯赛，似乎最后一题数据假了，要重测。。</p>
@@ -68,19 +79,8 @@
       </tags>
   </entry>
   <entry>
-    <title>CF EDU - Disjoint Sets Union 学习记录</title>
-    <url>/2021/05/01/ITMO-Disjoint-Sets-Union/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>ITMO Academy&amp;#58; pilot course</category>
-      </categories>
-      <tags>
-        <tag>并查集(disjoint sets union)</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Codeforces Round &amp;#35;600 (Div. 2) 解题报告</title>
-    <url>/2021/05/03/cf-1253/</url>
+    <url>/2021/04/01/cf-1253/</url>
     <content><![CDATA[<p>这是一篇老文章，写于2020/09/18。</p>
 <h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><ul>
 <li><p>比赛链接：<a href="https://codeforces.com/contest/1253">Dashboard</a></p>
@@ -189,8 +189,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Codeforces Round &amp;#35;665 (Div. 2) 解题报告</title>
+    <url>/2021/04/01/cf-1401/</url>
+    <content><![CDATA[<p>这是一篇老文章，写于2020/09/15。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li><p>比赛链接：<a href="https://codeforces.com/contest/1401">Dashboard</a></p>
+</li>
+<li><p>官方题解：<a href="https://codeforces.com/blog/entry/81700">Editorial</a></p>
+</li>
+</ul>
+<h2 id="A-Distance-and-Axis"><a href="#A-Distance-and-Axis" class="headerlink" title="A. Distance and Axis"></a>A. <a href="https://codeforces.com/contest/1401/problem/A">Distance and Axis</a></h2><div class="note info"><p>$T$ 组数据，$O$ 为原点，$A$ 点在 $x=N$ 处，求最少让 $A$ 移动多少，使得x轴上存在点 $B$ 满足 $|OB|=|AB|=K$。</p>
+<p>$T\leq 6000,0\leq N,K\leq 10^6$</p>
+</div>
+
+<p>多退少补。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-08-22 19:19:00</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1401/problem/A</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N, M;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">        <span class="keyword">if</span> (M &gt; N) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, M - N);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (N - M) &amp; <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="B-Ternary-Sequence"><a href="#B-Ternary-Sequence" class="headerlink" title="B. Ternary Sequence"></a>B. <a href="https://codeforces.com/contest/1401/problem/B">Ternary Sequence</a></h2><h2 id="C-Mere-Array"><a href="#C-Mere-Array" class="headerlink" title="C. Mere Array"></a>C. <a href="https://codeforces.com/contest/1401/problem/C">Mere Array</a></h2><h2 id="D-Maximum-Distributed-Tree"><a href="#D-Maximum-Distributed-Tree" class="headerlink" title="D. Maximum Distributed Tree"></a>D. <a href="https://codeforces.com/contest/1401/problem/D">Maximum Distributed Tree</a></h2><h2 id="E-Divide-Square"><a href="#E-Divide-Square" class="headerlink" title="E.  Divide Square"></a>E. <a href="https://codeforces.com/contest/1401/problem/E"> Divide Square</a></h2><h2 id="F-Reverse-and-Swap"><a href="#F-Reverse-and-Swap" class="headerlink" title="F. Reverse and Swap"></a>F. <a href="https://codeforces.com/contest/1401/problem/F">Reverse and Swap</a></h2>]]></content>
+      <categories>
+        <category>Codeforces</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Codeforces Round &amp;#35;668 (Div. 2) 解题报告</title>
-    <url>/2021/05/03/cf-1255/</url>
+    <url>/2021/04/01/cf-1255/</url>
     <content><![CDATA[<p>这是一篇老文章，写于2020/09/12。</p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
 <li><p>比赛链接：<a href="https://codeforces.com/contest/1405">Dashboard</a></p>
@@ -303,33 +328,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Codeforces Round &amp;#35;665 (Div. 2) 解题报告</title>
-    <url>/2021/05/03/cf-1401/</url>
-    <content><![CDATA[<p>这是一篇老文章，写于2020/09/15。</p>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
-<li><p>比赛链接：<a href="https://codeforces.com/contest/1401">Dashboard</a></p>
-</li>
-<li><p>官方题解：<a href="https://codeforces.com/blog/entry/81700">Editorial</a></p>
-</li>
-</ul>
-<h2 id="A-Distance-and-Axis"><a href="#A-Distance-and-Axis" class="headerlink" title="A. Distance and Axis"></a>A. <a href="https://codeforces.com/contest/1401/problem/A">Distance and Axis</a></h2><div class="note info"><p>$T$ 组数据，$O$ 为原点，$A$ 点在 $x=N$ 处，求最少让 $A$ 移动多少，使得x轴上存在点 $B$ 满足 $|OB|=|AB|=K$。</p>
-<p>$T\leq 6000,0\leq N,K\leq 10^6$</p>
-</div>
-
-<p>多退少补。</p>
-<details class="note success no-icon"><summary><p>Code</p>
-</summary>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: Skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-08-22 19:19:00</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1401/problem/A</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N, M;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">        <span class="keyword">if</span> (M &gt; N) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, M - N);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (N - M) &amp; <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-<h2 id="B-Ternary-Sequence"><a href="#B-Ternary-Sequence" class="headerlink" title="B. Ternary Sequence"></a>B. <a href="https://codeforces.com/contest/1401/problem/B">Ternary Sequence</a></h2><h2 id="C-Mere-Array"><a href="#C-Mere-Array" class="headerlink" title="C. Mere Array"></a>C. <a href="https://codeforces.com/contest/1401/problem/C">Mere Array</a></h2><h2 id="D-Maximum-Distributed-Tree"><a href="#D-Maximum-Distributed-Tree" class="headerlink" title="D. Maximum Distributed Tree"></a>D. <a href="https://codeforces.com/contest/1401/problem/D">Maximum Distributed Tree</a></h2><h2 id="E-Divide-Square"><a href="#E-Divide-Square" class="headerlink" title="E.  Divide Square"></a>E. <a href="https://codeforces.com/contest/1401/problem/E"> Divide Square</a></h2><h2 id="F-Reverse-and-Swap"><a href="#F-Reverse-and-Swap" class="headerlink" title="F. Reverse and Swap"></a>F. <a href="https://codeforces.com/contest/1401/problem/F">Reverse and Swap</a></h2>]]></content>
-      <categories>
-        <category>Codeforces</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Codeforces Round &amp;#35;668 (Div. 2) 解题报告</title>
-    <url>/2021/05/03/cf-1405/</url>
+    <url>/2021/04/01/cf-1405/</url>
     <content><![CDATA[<p>这是一篇老文章，写于2020/09/11。</p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
 <li><p>比赛链接：<a href="https://codeforces.com/contest/1405">Dashboard</a></p>
@@ -425,7 +425,7 @@
   </entry>
   <entry>
     <title>Codeforces Round &amp;#35;670 (Div. 2) 解题报告</title>
-    <url>/2021/05/03/cf-1406/</url>
+    <url>/2021/04/01/cf-1406/</url>
     <content><![CDATA[<p>这是一篇老文章，写于2020/09/14。</p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
 <li><p>比赛链接：<a href="https://codeforces.com/contest/1406">Dashboard</a></p>
@@ -540,7 +540,7 @@
   </entry>
   <entry>
     <title>Codeforces Round &amp;#35;669 (Div. 2) 解题报告</title>
-    <url>/2021/05/03/cf-1407/</url>
+    <url>/2021/04/01/cf-1407/</url>
     <content><![CDATA[<p>这是一篇老文章，写于2020/09/14。</p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
 <li><p>比赛链接：<a href="https://codeforces.com/contest/1407">Dashboard</a></p>
@@ -641,7 +641,7 @@
   </entry>
   <entry>
     <title>Codeforces Round &amp;#35;667 (Div. 3) 解题报告</title>
-    <url>/2021/05/03/cf-1409/</url>
+    <url>/2021/04/01/cf-1409/</url>
     <content><![CDATA[<p>这是一篇老文章，写于2020/09/14。</p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
 <li><p>比赛链接：<a href="https://codeforces.com/contest/1409">Dashboard</a></p>
@@ -799,9 +799,81 @@
       </tags>
   </entry>
   <entry>
-    <title>cf-1515</title>
+    <title>Codeforces Global Round 14 总结&amp;题解</title>
     <url>/2021/05/03/cf-1515/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>急急忙忙赶完军事理论课的论文，开打CF。</p>
+<p>开始立了个慢慢做尽量不要犯脑瘫错误的flag，结果又成功-100。。</p>
+<p>rank 1015/22554，rating+43，到了紫名。。</p>
+<h3 id="A-Phoenix-and-Gold"><a href="#A-Phoenix-and-Gold" class="headerlink" title="A - Phoenix and Gold"></a><a href="https://codeforces.com/contest/1515/problem/A">A - Phoenix and Gold</a></h3><div class="note info"><p>$T$ 组数据。</p>
+<p>每次给定长为 $n$ 的序列 $a$ 和整数 $m$，保证序列中任意两个数都不同。先要将这 $n$ 个数重新排列，得到序列 $b$，使得 $\forall r\in[1,n], \sum\limits_{i=1}^{r}{b_i}\not= m$。如果无解，输出 <code>-1</code>。</p>
+<p>$T\leq 1000, n\leq 100, m\leq 10^4$ </p>
+</div>
+
+<p>不难发现，除非 $\sum\limits_{1}^{n}{a_i}=m$，否则都有方案满足条件。</p>
+<p>按照原顺序输出 $a$，并记录当前前缀和 $s$，如果 $s+a_i=m$，则交换 $a_i$ 和 $a_{i+1}$。由于 $a_i\not= a_{i+1}$，因此 $s+a_{i+1}\not= m$。由于 $\sum\limits_{1}^{n}{a_i}\not =m$，所以一直这么做，不会出现前缀和为 $m$ 的情况。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-05-02 22:35:54</span></span><br><span class="line"><span class="comment"> * Source: https://codeforces.com/contest/1515/problem/A</span></span><br><span class="line"><span class="comment"> * Problem: CF 1515 A</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, n, m;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">        v.<span class="built_in">resize</span>(n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x : v) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : v) sum += x;</span><br><span class="line">        <span class="keyword">if</span> (sum == m) &#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">&quot;NO&quot;</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            sum += v[i];</span><br><span class="line">            <span class="keyword">if</span> (sum == m) <span class="built_in">swap</span>(v[i], v[i + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;YES&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, v[i]);</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="B-Phoenix-and-Puzzle"><a href="#B-Phoenix-and-Puzzle" class="headerlink" title="B - Phoenix and Puzzle"></a><a href="https://codeforces.com/contest/1515/problem/B">B - Phoenix and Puzzle</a></h3><div class="note info"><p>给你 $n$ 个边长为 $1$ 的等腰直角三角形，求能否拼成一个正方形。</p>
+</div>
+
+<p>如果拼出边长为 $1$ 的正方形，需要两个三角形。因而拼出边长为 $x$ 的三角形，需要 $2\times x^2$ 个三角形。</p>
+<p>如果拼出边长为 $\sqrt{2}$ 的正方形，需要四个三角形。因而拼出边长为 $x\sqrt{2}$ 的三角形，需要 $4\times x^2$ 个三角形。 </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-05-02 22:35:54</span></span><br><span class="line"><span class="comment"> * Source: https://codeforces.com/contest/1515/problem/B</span></span><br><span class="line"><span class="comment"> * Problem: CF 1515 B</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = <span class="built_in">sqrt</span>(n / <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">if</span> (x * x == n / <span class="number">2</span>) &#123;</span><br><span class="line">                <span class="built_in">puts</span>(<span class="string">&quot;YES&quot;</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">4</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = <span class="built_in">sqrt</span>(n / <span class="number">4</span>);</span><br><span class="line">            <span class="keyword">if</span> (x * x == n / <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="built_in">puts</span>(<span class="string">&quot;YES&quot;</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;NO&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="C-Phoenix-and-Towers"><a href="#C-Phoenix-and-Towers" class="headerlink" title="C - Phoenix and Towers"></a><a href="https://codeforces.com/contest/1515/problem/C">C - Phoenix and Towers</a></h3><div class="note info"><p>将 $n$ 个数（$a_i\leq x$）分成 $m$ 组，每组的权值为其中的数之和。要求任意两组权值之差不能超过 $x$，求一种分组方案。如果无解，输出<code>NO</code>。</p>
+</div>
+
+<p>前面还小心翼翼的，结果这题贡献了一发resubmission。关键是重交完之后才发现前一份就是对的，尴尬。。</p>
+<p>其实可以发现，是不可能无解的，因为每个数都不超过 $x$。</p>
+<p>可惜我开始为了调试，在判断无解的时候写了 <code>if (... &amp; 0) puts(&quot;NO&quot;);</code>，没想到过了pretest。为了不FST，只能删掉了<code>&amp; 0</code>重新交了一份，交完才意识到过pretest并不是因为pretest中没有无解的情况，而是任何数据都不可能无解。。</p>
+<p>于是当时排名直接从300+掉到500+。</p>
+<p>做法是个很trivial的贪心，将所有数从大到小排序，每次将当前数插入到权值最小的组中。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-05-02 22:35:54</span></span><br><span class="line"><span class="comment"> * Source: https://codeforces.com/contest/1515/problem/C</span></span><br><span class="line"><span class="comment"> * Problem: CF 1515 C</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, n, m, k;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; f, g;</span><br><span class="line">vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; v;</span><br><span class="line">priority_queue&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; pq;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;k);</span><br><span class="line">        v.<span class="built_in">resize</span>(n);</span><br><span class="line">        f.<span class="built_in">resize</span>(m, <span class="number">0</span>);</span><br><span class="line">        g.<span class="built_in">resize</span>(n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;v[i].first);</span><br><span class="line">            v[i].second = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!pq.<span class="built_in">empty</span>()) pq.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (cur &lt; m) &#123;</span><br><span class="line">                f[cur] = v[i].first;</span><br><span class="line">                pq.<span class="built_in">push</span>(&#123;-f[cur], cur&#125;);</span><br><span class="line">                g[v[i].second] = cur;</span><br><span class="line">                ++cur;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">int</span> idx = pq.<span class="built_in">top</span>().second; pq.<span class="built_in">pop</span>();</span><br><span class="line">                f[idx] += v[i].first;</span><br><span class="line">                g[v[i].second] = idx;</span><br><span class="line">                pq.<span class="built_in">push</span>(&#123;-f[idx], idx&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mn = INT_MAX, mx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : f) &#123;</span><br><span class="line">            mn = <span class="built_in">min</span>(mn, x);</span><br><span class="line">            mx = <span class="built_in">max</span>(mx, x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;YES&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : g) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, x + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="D-Phoenix-and-Socks"><a href="#D-Phoenix-and-Socks" class="headerlink" title="D - Phoenix and Socks"></a><a href="https://codeforces.com/contest/1515/problem/D">D - Phoenix and Socks</a></h3><div class="note info"><p>有 $2n$ 只袜子，其中 $l$ 只左袜，$r$ 只右袜。每个袜子有颜色 $c_i$。颜色相同的一只左袜和一只右袜可以配对成一双袜子。</p>
+<p>现在有 $3$ 种操作，花费都是 $1$：</p>
+<ul>
+<li>改变一只袜子的颜色，方向不变</li>
+<li>将某只袜子从左袜变成右袜，颜色不变</li>
+<li>将某只袜子从右袜变成左袜，颜色不变</li>
+</ul>
+<p>求最小花费完成这 $2n$ 只袜子的配对。</p>
+</div>
+
+<p>血泪教训，直接复制粘贴结构相似的代码，改变量名的时候一定看仔细了，我就是忘了把<code>numr</code> 改成 <code>numl</code> 喜提一发wa on test 2。。</p>
+<p>把能配对的袜子都配对，那么剩下若干无法匹配的袜子。</p>
+<p>假设剩下 $numl$ 只左袜，$numr$ 只右袜。</p>
+<p>记录 $|f[i]|$ 表示颜色为 $i$ 的袜子剩下几只，$f[i]&gt;0$ 表示剩下的是左袜， $f[i]&lt;0$ 表示剩下的是右袜。</p>
+<p>如果 $numl\not= numr$，则需要把数量多的袜子换个方向。对于颜色 $i$，将 $\lfloor\frac{|f[i]|}{2}\rfloor$ 只袜子换方向，这样它们就可以直接与剩下 $\lceil\frac{f[i]}{2}\rceil$ 只袜子配对，此时 $|numl-numr|$ 减小 $\lfloor\frac{|f[i]|}{2}\rfloor$ 。</p>
+<p>但是可能对所有颜色都执行完，$numl$ 仍然与 $numr$ 不相等，那就只能暴力改了，这会使每只多的袜子花费 $2$，需要先换方向，再换颜色。花费为 $\frac{|numl-numr|}{2}+\frac{numl+numr}{2}$。</p>
+<p>那么总花费就能算出来了。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-05-02 22:35:54</span></span><br><span class="line"><span class="comment"> * Source: https://codeforces.com/contest/1515/problem/D</span></span><br><span class="line"><span class="comment"> * Problem: CF 1515 D</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, n, l, r;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; v, f, vl, vr;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;l, &amp;r);</span><br><span class="line">        v.<span class="built_in">resize</span>(n);</span><br><span class="line">        f.<span class="built_in">resize</span>(n + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x : f) x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x : v) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; ++i) &#123;</span><br><span class="line">            ++f[v[i]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt; n; ++i) &#123;</span><br><span class="line">            --f[v[i]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, numl = <span class="number">0</span>, numr = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (f[i] &gt; <span class="number">0</span>) numl += f[i];</span><br><span class="line">            <span class="keyword">if</span> (f[i] &lt; <span class="number">0</span>) numr += -f[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (numl &gt; numr) &#123;</span><br><span class="line">            <span class="keyword">int</span> more = numl - numr;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (f[i] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> tmp = <span class="built_in">min</span>(more, f[i] / <span class="number">2</span> * <span class="number">2</span>);</span><br><span class="line">                    ans += tmp / <span class="number">2</span>;</span><br><span class="line">                    more -= tmp;</span><br><span class="line">                    numl -= tmp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (numr &gt; numl) &#123;</span><br><span class="line">            <span class="keyword">int</span> more = numr - numl;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (f[i] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> tmp = <span class="built_in">min</span>(more, -f[i] / <span class="number">2</span> * <span class="number">2</span>);</span><br><span class="line">                    ans += tmp / <span class="number">2</span>;</span><br><span class="line">                    more -= tmp;</span><br><span class="line">                    numr -= tmp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans + <span class="built_in">abs</span>(numl - numr) / <span class="number">2</span> + (numl + numr) / <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="E-Phoenix-and-Computers"><a href="#E-Phoenix-and-Computers" class="headerlink" title="E - Phoenix and Computers"></a><a href="https://codeforces.com/contest/1515/problem/E">E - Phoenix and Computers</a></h3><div class="note info"><p>有 $n$ 台电脑摆成一排，现在想要将它们全部开机。</p>
+<p>每次可以选择一台没有开机的电脑开机，而电脑有个特性，就是如果它左侧和右侧那台电脑都开机了，那么它会自动开机（也就是说不能再选择它开机）。</p>
+<p>求有多少种不同的开机方案，答案对 $m$ 取模。</p>
+<p>$n\leq 400, 10^8\leq m\leq 10^9$。</p>
+</div>
+
+<p>太马了，挣扎了俩小时也没做出来，其实就差临门一脚了。。</p>
+<p>开始想的是区间DP，但是发现没法合并，如果要强行合并的话复杂度又太高。。</p>
+<p>考虑这样一个子问题，我要打开 $[1,x]$ 的所有电脑，要求没有电脑自动开机的方案数。</p>
+<p>那么选择第一个开机的电脑 $y$ 后，下一步要么开 $y-1$，要么开 $y+1$，没有其他选择。因为如果开其他的电脑，那么一定存在某台电脑被自动开机（它被两边夹住了）。</p>
+<p>也就是说在任意时刻，开机的电脑都是个连续区间 $[l,r]$，而下一步只能选择 $l-1$ 或者 $r+1$。</p>
+<p>那么有多少种方案呐？</p>
+<p>对于区间 $[1,x]$，第一步选择 $y$ 后，可以往左延伸 $y-1$ 次，则方案数为 $\binom{y-1}{x}$。</p>
+<p>取 $y=1,2,\cdots,x$，那么总方案数为 $\binom{x}{0}+\binom{x}{1}+\cdots+\binom{x}{x}=2^{x-1}$。</p>
+<p>那么对于任意一个合法的开机方案，都可以划分为若干个区间 $[l_i,r_i]$ 分别开机，其中 $r_i=l_{i+1}-1$，相邻两个区间中间的那台电脑被自动开机。</p>
+<p>令 $f_{x,y}$ 表示开机了 $[1,x-1]$ 的所有电脑，其中 $y$ 台为手动开机的方案数，则 $f_{x+k+1,y+k}=f_{x,y}\times 2^k\times \binom{y+k}{y}$，其中 $2^{k-1}$ 表示开机区间 $[x+1,x+k]$ 的方案数，而由于不同区间是相互独立的，可以按照任意顺序开机，因此 $C^k_{y+k}$ 表示将新区间的 $k$ 次开机可以在总共 $y+k$ 次开机中任意选择。</p>
+<p>这等价于合并两个序列，第一个序列有 $f_{x,y}$ 种情况，长为 $y$，第二个序列有 $2^k$ 种情况，长为 $k$。则合并后得到的长为 $y+k$ 的新序列有 $f_{x,y}\times 2^{k-1}\times \binom{y+k}{y}$ 种不同情况。</p>
+<p>最终答案为 $\sum\limits_{1}^{n}{f_{n+1,i}}$，复杂度 $O(n^3)$。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2021-05-02 22:35:54</span></span><br><span class="line"><span class="comment"> * Source:</span></span><br><span class="line"><span class="comment"> * Problem:</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">400</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> F[MAXN][MAXN];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> Bin[MAXN];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> C[MAXN][MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">    Bin[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) Bin[i] = Bin[i - <span class="number">1</span>] * <span class="number">2</span> % M;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">        C[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; ++j) &#123;</span><br><span class="line">            C[i][j] = (C[i - <span class="number">1</span>][j - <span class="number">1</span>] + C[i - <span class="number">1</span>][j]) % M;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    F[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; ++j) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; i + k &lt;= N; ++k) &#123;</span><br><span class="line">                F[i + k + <span class="number">1</span>][j + k] += F[i][j] * Bin[k - <span class="number">1</span>] % M * C[j + k][k] % M;</span><br><span class="line">                F[i + k + <span class="number">1</span>][j + k] %= M;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= N; ++i) ans = (ans + F[N + <span class="number">1</span>][i]) % M;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其余坑代填。</p>
+]]></content>
+      <categories>
+        <category>Codeforces</category>
+      </categories>
   </entry>
   <entry>
     <title>Codeforces Round &amp;#35;717 (Div. 2) 总结&amp;题解</title>
@@ -973,33 +1045,6 @@
       </categories>
   </entry>
   <entry>
-    <title>蓝桥杯2021省赛 游记&amp;题解</title>
-    <url>/2021/04/19/lanqiao-2021/</url>
-    <content><![CDATA[<p>虽然之前一直听说这个比赛很水，但是比赛前一天做了下去年的题，发现最后俩题也只能搞到一半的分。</p>
-<p>我必须先对吐槽一下机房的电脑，4G内存的win7，这配置放到10年前都不过分吧？打开个devCpp和Chrome花了5分钟，不过好在没有在比赛中途去世。</p>
-<p>填空题感觉还行。</p>
-<p>第一题开始以为是输出<code>3182</code>（被样例的<code>11</code>蒙蔽了），考试结束前最后10秒神游的时候，突然想到了什么，把它改成了<code>3181</code>。</p>
-<p>这个真的惊险刺激。我考前发现电脑的时间不对，于是就调了一下小时和分钟，但是秒针校正有点麻烦，所以我就没调。因此电脑时间实际上快了20秒。在比赛结束前30秒我在神游的时候，突然意识到第一题似乎有点奇怪，仔细一看发现果然不对。想改的时候一看时间刚好从12:59变成13:00，心想彻底凉了。但是我抱着侥幸的心理尝试去修改答案，没想到真的成功修改了，我这才想起来这个时间快了20秒。真是大起大落。</p>
-<p>第二题，把所有直线表示成 $y=\frac{a}{b}\times x + \frac{c}{d}$ 的形式，用<code>vector</code> 去存这俩分数。然而我第一次写的时候翻了个脑瘫错误，对分数约分的时候是这么写的：</p>
-<p><code>u /= __gcd(u, d), d /= __gcd(u, d);</code></p>
-<p>这里的第二个<code>gcd(u,d)</code>的<code>u</code>已经不是原来的<code>u</code>了。好在最后半个小时手动去数在<code>x=3 y=4</code>情况下所有直线的时候，发现了奇怪的分数$y=\frac{1}{-1}\times x+\frac{1}{2}$，而这条线肯定不存在。修正后结果是<code>40257</code>。</p>
-<p>第三题，欧拉筛$\sqrt{n}$以下的质数，然后对$n$做质因数分解。我发现因数很少，于是直接dfs枚举ABC，得到<code>2430</code>。</p>
-<p>第四题建图，然后写个最短路，结果是<code>10266837</code>。</p>
-<p>第五题开始做的时候还没清醒，想要暴力DFS慢慢跑，但是跑了几十分钟也没跑出来。后来回过神来一看，TSP问题不是可以状压吗？于是 $O(n\times 2^n)$ 写了一发，1秒就跑出来了。和之前dfs的做法在$n$比较小的时候对拍了一下，一模一样美滋滋，得到结果<code>881012367360</code>。</p>
-<p>代码题我就naive了。</p>
-<p>第一题天平，开始写了个<code>set</code>来回跑，造了个大数据发现跑的好慢。后来发现还不如直接数组遍历，复杂度 $O(n\sum{w_i})$。</p>
-<p>第二题博弈论，一看异或我就想到了从高位往低位跑。得到结论，如果所有数异或值为 $0$，则平局，否则Alice胜。我还以为终于碰到了我会做的博弈论。然而赛后在群里讨论，发现我的结论出了问题，没有考虑出现$0$意味着交换先后手，所以Bob可能赢。这还多组数据，我估计要爬了。</p>
-<p>第三题左儿子右兄弟，普及组的树形DP。每次把深度最大的儿子放在最下面，那么它的高度就是它的儿子个数+最高的儿子的高度。$f(x)=|son(x)|+\max\limits_{v\in son(x)}{f(v)}$，复杂度 $O(n)$。</p>
-<p>第四题括号序，看了一眼本来想分段，但是思路不太清晰没有讨论出来。最后干脆输出<code>0</code>。感觉我确实菜。</p>
-<p>第五题分糖果，数据范围说$w$随机生成我就觉得很有灵性，但是并不知道怎么做，感觉像是个分段的DP。写了个dfs，发现$n=30$跑起来也飞快，估计能搞到一点分。</p>
-<p>估分45+15+0+20+0+25*0.5=90。</p>
-<p>总的来说，感觉比去年的题难不少，没啥送分题。不过金牌爷们都打EC Final去了，大概捞个奖问题不大。</p>
-]]></content>
-      <categories>
-        <category>游记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>团体程序天梯赛2021 游记&amp;代码</title>
     <url>/2021/04/24/gplt-2021/</url>
     <content><![CDATA[<p>毫无准备就去了，似乎因为选拔赛考的还行于是混进了1队？。。</p>
@@ -1087,6 +1132,33 @@
 <p>输出<code>1</code>获得1分。<del><mark class="label warning">然后我看个人榜有人获得264、265分，估计还有个点比较简单。于是暴力跑了 $n$ 比较小的情况，得到了几个分数，依次输出，发现 $\frac{13}{6}$ 过了第一个点。但是似乎实际数据点不是这个 $n$ ，就有点迷惑。</mark></del></p>
 <p>还不会，坑代填。</p>
 <mark class="label info">upd：数据锅了，原题是<a href = https://codeforces.com/problemset/problem/1139/D>CF 1139 D</a>，莫比乌斯反演是正确的。</mark>]]></content>
+      <categories>
+        <category>游记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>蓝桥杯2021省赛 游记&amp;题解</title>
+    <url>/2021/04/19/lanqiao-2021/</url>
+    <content><![CDATA[<p>虽然之前一直听说这个比赛很水，但是比赛前一天做了下去年的题，发现最后俩题也只能搞到一半的分。</p>
+<p>我必须先对吐槽一下机房的电脑，4G内存的win7，这配置放到10年前都不过分吧？打开个devCpp和Chrome花了5分钟，不过好在没有在比赛中途去世。</p>
+<p>填空题感觉还行。</p>
+<p>第一题开始以为是输出<code>3182</code>（被样例的<code>11</code>蒙蔽了），考试结束前最后10秒神游的时候，突然想到了什么，把它改成了<code>3181</code>。</p>
+<p>这个真的惊险刺激。我考前发现电脑的时间不对，于是就调了一下小时和分钟，但是秒针校正有点麻烦，所以我就没调。因此电脑时间实际上快了20秒。在比赛结束前30秒我在神游的时候，突然意识到第一题似乎有点奇怪，仔细一看发现果然不对。想改的时候一看时间刚好从12:59变成13:00，心想彻底凉了。但是我抱着侥幸的心理尝试去修改答案，没想到真的成功修改了，我这才想起来这个时间快了20秒。真是大起大落。</p>
+<p>第二题，把所有直线表示成 $y=\frac{a}{b}\times x + \frac{c}{d}$ 的形式，用<code>vector</code> 去存这俩分数。然而我第一次写的时候翻了个脑瘫错误，对分数约分的时候是这么写的：</p>
+<p><code>u /= __gcd(u, d), d /= __gcd(u, d);</code></p>
+<p>这里的第二个<code>gcd(u,d)</code>的<code>u</code>已经不是原来的<code>u</code>了。好在最后半个小时手动去数在<code>x=3 y=4</code>情况下所有直线的时候，发现了奇怪的分数$y=\frac{1}{-1}\times x+\frac{1}{2}$，而这条线肯定不存在。修正后结果是<code>40257</code>。</p>
+<p>第三题，欧拉筛$\sqrt{n}$以下的质数，然后对$n$做质因数分解。我发现因数很少，于是直接dfs枚举ABC，得到<code>2430</code>。</p>
+<p>第四题建图，然后写个最短路，结果是<code>10266837</code>。</p>
+<p>第五题开始做的时候还没清醒，想要暴力DFS慢慢跑，但是跑了几十分钟也没跑出来。后来回过神来一看，TSP问题不是可以状压吗？于是 $O(n\times 2^n)$ 写了一发，1秒就跑出来了。和之前dfs的做法在$n$比较小的时候对拍了一下，一模一样美滋滋，得到结果<code>881012367360</code>。</p>
+<p>代码题我就naive了。</p>
+<p>第一题天平，开始写了个<code>set</code>来回跑，造了个大数据发现跑的好慢。后来发现还不如直接数组遍历，复杂度 $O(n\sum{w_i})$。</p>
+<p>第二题博弈论，一看异或我就想到了从高位往低位跑。得到结论，如果所有数异或值为 $0$，则平局，否则Alice胜。我还以为终于碰到了我会做的博弈论。然而赛后在群里讨论，发现我的结论出了问题，没有考虑出现$0$意味着交换先后手，所以Bob可能赢。这还多组数据，我估计要爬了。</p>
+<p>第三题左儿子右兄弟，普及组的树形DP。每次把深度最大的儿子放在最下面，那么它的高度就是它的儿子个数+最高的儿子的高度。$f(x)=|son(x)|+\max\limits_{v\in son(x)}{f(v)}$，复杂度 $O(n)$。</p>
+<p>第四题括号序，看了一眼本来想分段，但是思路不太清晰没有讨论出来。最后干脆输出<code>0</code>。感觉我确实菜。</p>
+<p>第五题分糖果，数据范围说$w$随机生成我就觉得很有灵性，但是并不知道怎么做，感觉像是个分段的DP。写了个dfs，发现$n=30$跑起来也飞快，估计能搞到一点分。</p>
+<p>估分45+15+0+20+0+25*0.5=90。</p>
+<p>总的来说，感觉比去年的题难不少，没啥送分题。不过金牌爷们都打EC Final去了，大概捞个奖问题不大。</p>
+]]></content>
       <categories>
         <category>游记</category>
       </categories>
