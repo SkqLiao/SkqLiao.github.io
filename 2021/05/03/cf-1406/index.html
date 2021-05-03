@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;skqliao.github.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:true,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:-1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<meta name="description" content="Codeforces Round &amp;#35;670 (Div. 2) 解题报告">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round &amp;#35;670 (Div. 2) 解题报告">
+<meta property="og:url" content="https://skqliao.github.io/2021/05/03/cf-1406/index.html">
+<meta property="og:site_name" content="Skqliao&#39;s Blog">
+<meta property="og:description" content="Codeforces Round &amp;#35;670 (Div. 2) 解题报告">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-03T03:01:53.000Z">
+<meta property="article:modified_time" content="2021-05-03T03:22:21.500Z">
+<meta property="article:author" content="Jiaqi Liao">
+<meta property="article:tag" content="交互(interactive)">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://skqliao.github.io/2021/05/03/cf-1406/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;skqliao.github.io&#x2F;2021&#x2F;05&#x2F;03&#x2F;cf-1406&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;05&#x2F;03&#x2F;cf-1406&#x2F;&quot;,&quot;title&quot;:&quot;Codeforces Round &amp;#35;670 (Div. 2) 解题报告&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>Codeforces Round &#35;670 (Div. 2) 解题报告 | Skqliao's Blog</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Skqliao's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-contests"><a href="/contests/" rel="section"><i class="fa fa-flag fa-fw"></i>比赛</a></li>
+        <li class="menu-item menu-item-to-dos"><a href="/to-dos/" rel="section"><i class="fa fa-check-square fa-fw"></i>待办</a></li>
+        <li class="menu-item menu-item-lists"><a href="/lists/" rel="section"><i class="fa fa-book fa-fw"></i>列表</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">相关链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%B5%9B%E7%8A%B6%E5%86%B5"><span class="nav-number">2.</span> <span class="nav-text">比赛状况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Subset-Mex"><span class="nav-number">3.</span> <span class="nav-text">A. Subset Mex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Maximum-Product"><span class="nav-number">4.</span> <span class="nav-text">B. Maximum Product</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Link-Cut-Centroids"><span class="nav-number">5.</span> <span class="nav-text">C. Link Cut Centroids</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-Three-Sequences"><span class="nav-number">6.</span> <span class="nav-text">D. Three Sequences</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-Deleting-Numbers"><span class="nav-number">7.</span> <span class="nav-text">E. Deleting Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E6%98%93%E4%BA%A4%E4%BA%92%E5%99%A8"><span class="nav-number">7.1.</span> <span class="nav-text">简易交互器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%89%E6%89%8B"><span class="nav-number">7.1.1.</span> <span class="nav-text">选手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E5%BA%93"><span class="nav-number">7.1.2.</span> <span class="nav-text">交互库</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jiaqi Liao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jiaqi Liao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:skqliao@gmail.com" title="E-Mail → mailto:skqliao@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2841343424&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2841343424&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://skqliao.github.io/2021/05/03/cf-1406/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jiaqi Liao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skqliao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Codeforces Round &#35;670 (Div. 2) 解题报告
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-05-03 11:01:53 / 修改时间：11:22:21" itemprop="dateCreated datePublished" datetime="2021-05-03T11:01:53+08:00">2021-05-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Codeforces Round &#35;670 (Div. 2) 解题报告</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>这是一篇老文章，写于2020/09/14。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li><p>比赛链接：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1406">Dashboard</a></p>
+</li>
+<li><p>官方题解：<a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/82560">Editorial</a></p>
+</li>
+</ul>
+<h2 id="比赛状况"><a href="#比赛状况" class="headerlink" title="比赛状况"></a>比赛状况</h2><p>Solved: 3/5</p>
+<p>Rank: 452</p>
+<p>Rating change: +254 -&gt; 1647</p>
+<h2 id="A-Subset-Mex"><a href="#A-Subset-Mex" class="headerlink" title="A. Subset Mex"></a>A. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1406/problem/A">Subset Mex</a></h2><div class="note info"><p>$T$ 组数据，每次输入 $N$ 个数，将其分成两部分 $A, B$，使得 $mex(A)+mex(B)$ 最大，并输出这个最大值。</p>
+<p>$T,N\leq 100$</p>
+</div>
+
+<p>从 $0$ 开始将数依次插入集合 $A$ 中，遇到断点后停下，即为 $mex(A)$，剩下的数求 $mex(B)$。</p>
+<p>复杂度 $O(N)$。</p>
+<p>多组数据记得<code>memset</code>。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-12 21:45:44</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1406/problem/A</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N, A[MAXN];</span><br><span class="line"><span class="keyword">int</span> Cnt[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>, mx = <span class="number">0</span>;</span><br><span class="line">		cin &gt;&gt; N;</span><br><span class="line">		<span class="built_in">memset</span>(Cnt, <span class="number">0</span>, <span class="keyword">sizeof</span> Cnt);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) cin &gt;&gt; A[i];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) ++Cnt[A[i]];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) mx = <span class="built_in">max</span>(mx, A[i]);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= mx + <span class="number">1</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (!Cnt[i]) &#123;</span><br><span class="line">				ans = i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			--Cnt[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= mx + <span class="number">1</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (!Cnt[i]) &#123;</span><br><span class="line">				ans += i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="B-Maximum-Product"><a href="#B-Maximum-Product" class="headerlink" title="B. Maximum Product"></a>B. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1406/problem/B">Maximum Product</a></h2><div class="note info"><p>$T$ 组数据，每次输入 $N$ 个数 $A[1\cdots N]$，从中选出 $5$ 个数，使得乘积最大，并输出这个乘积。</p>
+<p>$T\leq 2\cdot 10^4,5\leq N\leq 10^5,-3\times 10^3\leq A_i\leq 3\times 10^3$，保证 $\sum{N}\leq 2\cdot 10^5$。</p>
+</div>
+
+<p>只有几种可能取到最大值：</p>
+<ul>
+<li>最大的五个正数相乘</li>
+<li>最小的四个负数与最大的正数相乘</li>
+<li>最小的两个负数与最大的三个正数相乘</li>
+</ul>
+<p>可能会存在没有那么多负数/正数的情况，但显然这三种情况至少会满足一种，因此取三种情况的最大值。</p>
+<p>复杂度 $O(T\times N)$。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-12 21:52:23</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1406/problem/B</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> A[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		cin &gt;&gt; N;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) cin &gt;&gt; A[i];</span><br><span class="line">		<span class="built_in">sort</span>(A + <span class="number">1</span>, A + N + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> ans1 = A[<span class="number">1</span>] * A[<span class="number">2</span>] * A[<span class="number">3</span>] * A[<span class="number">4</span>] * A[N];</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> ans2 = A[<span class="number">1</span>] * A[<span class="number">2</span>] * A[N - <span class="number">2</span>] * A[N - <span class="number">1</span>] * A[N];</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> ans3 = A[N] * A[N - <span class="number">1</span>] * A[N - <span class="number">2</span>] * A[N - <span class="number">3</span>] * A[N - <span class="number">4</span>];</span><br><span class="line">		cout &lt;&lt; <span class="built_in">max</span>(ans1, <span class="built_in">max</span>(ans2, ans3)) &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="C-Link-Cut-Centroids"><a href="#C-Link-Cut-Centroids" class="headerlink" title="C. Link Cut Centroids"></a>C. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1406/problem/C">Link Cut Centroids</a></h2><div class="note info"><p>$T$ 组数据，输入一棵 $N$ 个点的树。选择一条边删去，并连接一条新边，要求操作后仍然是一棵树，且只有一个重心。输出删除与增加的边上的两个节点。</p>
+<p>$T\leq 10^4,N\leq 10^5$</p>
+</div>
+
+<p>只有当 $N$ 为偶数的时候才可能有两个重心，因而 $N$ 为奇数时可以不改变树的形态。</p>
+<p>设两个重心为 $u,v$。将 $u,v$ 的其他子树简化为 $A, B$，则树的形态为 $A-u-v-B$。</p>
+<p>由于 $u,v$ 都是重心，因此 $size(A)=\frac{N}{2}-1,size(B)=\frac{N}{2}-1$。</p>
+<p>将 $A$ 中一个叶子 $x$ 断开并与 $v$ 相连，此时 $size(u+x+B)&gt;\frac{N}{2}$，因而 $u$ 不再是重心。而对于 $v$ 来说，$size(A+u-x),size(x),size(B)\leq \frac{N}{2}$，仍是重心。而如果对于 $B$ 中的点来说， $size(A+u+v+x) &gt; \frac{N}{2}$，因此不会是新的重心。</p>
+<p>复杂度 $O(T\times N)$。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-12 22:00:29</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1406/problem/C</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; G[MAXN], res;</span><br><span class="line"><span class="keyword">int</span> Sz[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">	Sz[x] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> u : G[x]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (u != fa) &#123;</span><br><span class="line">			<span class="built_in">dfs</span>(u, x);</span><br><span class="line">			Sz[x] += Sz[u];</span><br><span class="line">			flag &amp;= (Sz[u] &lt;= N / <span class="number">2</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	flag &amp;= (N - Sz[x] &lt;= N / <span class="number">2</span>);</span><br><span class="line">	<span class="keyword">if</span> (flag) res.<span class="built_in">push_back</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> node1, node2;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (G[x].<span class="built_in">size</span>() == <span class="number">1</span>) node1 = x, node2 = fa;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> u : G[x]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (u != fa) <span class="built_in">dfs2</span>(u, x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		cin &gt;&gt; N;</span><br><span class="line">		<span class="keyword">if</span> (N &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> u, v;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; ++i) cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">			cout &lt;&lt; u &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; v &lt;&lt; endl;</span><br><span class="line">			cout &lt;&lt; u &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; v &lt;&lt; endl;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) G[i].<span class="built_in">clear</span>();</span><br><span class="line">		res.<span class="built_in">clear</span>();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, u, v; i &lt; N; ++i) &#123;</span><br><span class="line">			cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">			G[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">			G[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">if</span> (res.<span class="built_in">size</span>() == <span class="number">1</span>) &#123;</span><br><span class="line">			cout &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; G[<span class="number">1</span>].<span class="built_in">front</span>() &lt;&lt; endl;</span><br><span class="line">			cout &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; G[<span class="number">1</span>].<span class="built_in">front</span>() &lt;&lt; endl;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">dfs2</span>(res.<span class="built_in">front</span>(), res.<span class="built_in">back</span>());</span><br><span class="line">			cout &lt;&lt; node1 &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; node2 &lt;&lt; endl;</span><br><span class="line">			cout &lt;&lt; res.<span class="built_in">back</span>() &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; node1 &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="D-Three-Sequences"><a href="#D-Three-Sequences" class="headerlink" title="D. Three Sequences"></a>D. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1406/problem/D">Three Sequences</a></h2><div class="note info"><p>输入一个序列 $A[1\cdots N]$，构造出单点不减的序列 $B$ 和单调不升的序列 $C$，满足 $A[i]=B[i]+C[i]$。要使得 $max(B[i],C[i])$ 最小。</p>
+<p>有 $Q$ 次修改，每次输入<code>l r x</code>，即将 $A[l,r]$ 增加 $x$，求修改后最小的 $max(B[i],C[i])$。</p>
+<p>$N,Q\leq 10^5$</p>
+</div>
+
+<p>先尝试用 $B[i]$ 和 $A[i]$ 来表示 $C[i]$，显然 $C[1]=A[1]-B[1]$。</p>
+<p>若 $A[2] &gt; A[1]$，由于 $C$ 单调不升，因而 $B[2]=A[2]-C[1]$ $=A[2]-A[1]+B[1]$, $C[2]=C[1]=A[1]-B[1]$。</p>
+<p>若 $A[2] &lt; A[1]$，由于 $B$ 单调不降，因而 $C[2]=A[2]-B[1],B[2]=B[1]$。</p>
+<p>通过观察即可发现，$B[i]=A[1]+\sum{max(0,A[i]-A[i-1])}-B[1]$。</p>
+<p>而所谓的 $max(B[i],C[i])$ 即 $max(B[N],C[1])=max(A[1]+\sum{max(0,A[i]-A[i-1])}+B[1],A[1]-B[1])$。</p>
+<p>使最大值最小，则 $A[1]+\sum{max(0,A[i]-A[i-1])}+B[1]=A[1]-B[1]$，得到 $\frac{A[1]+\sum{max(0,A[i]-A[i-1])}}{2}$。</p>
+<p>$max(0, A[i]-A[i-1])$ 可以 $O(N)$ 求出。</p>
+<p>而对于每次修改，只影响 $max(A[l]-A[l-1],0)$ 和 $max(A[r+1]-A[r],0)$ ，可以 $O(1)$ 修改。</p>
+<p>复杂度 $O(N+Q)$。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-12 22:22:08</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1406/problem/D</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> A[MAXN], sum;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p &gt; N) <span class="keyword">return</span> ;</span><br><span class="line">	<span class="keyword">if</span> (A[p] &gt; <span class="number">0</span>) sum -= A[p];</span><br><span class="line">	A[p] += x;</span><br><span class="line">	sum += <span class="built_in">max</span>((<span class="keyword">long</span> <span class="keyword">long</span>)<span class="number">0</span>, A[p]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> l, r, x;</span><br><span class="line">	cin &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) cin &gt;&gt; A[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = N; i &gt;= <span class="number">1</span>; --i) A[i] -= A[i - <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; ++i) sum += <span class="built_in">max</span>((<span class="keyword">long</span> <span class="keyword">long</span>)<span class="number">0</span>, A[i]);</span><br><span class="line">	cout &lt;&lt; (<span class="keyword">long</span> <span class="keyword">long</span>)<span class="built_in">ceil</span>((sum + A[<span class="number">1</span>]) / <span class="number">2.0</span>) &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; M;</span><br><span class="line">	<span class="keyword">while</span> (M--) &#123;</span><br><span class="line">		cin &gt;&gt; l &gt;&gt; r &gt;&gt; x;</span><br><span class="line">		<span class="keyword">if</span> (l == <span class="number">1</span>) A[<span class="number">1</span>] += x;</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">change</span>(l, x);</span><br><span class="line">		<span class="built_in">change</span>(r + <span class="number">1</span>, -x);</span><br><span class="line">		cout &lt;&lt; (<span class="keyword">long</span> <span class="keyword">long</span>)<span class="built_in">ceil</span>((sum + A[<span class="number">1</span>]) / <span class="number">2.0</span>) &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="E-Deleting-Numbers"><a href="#E-Deleting-Numbers" class="headerlink" title="E. Deleting Numbers"></a>E. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1406/problem/E">Deleting Numbers</a></h2><div class="note info"><p>这是一道交互题。</p>
+<p>输入 $N$，有一个目标数 $M(1\leq M \leq  N)$。初始化集合 ${1,2,\cdots,N}$，用三种交互方式：</p>
+<ul>
+<li><code>A x</code>：查询集合中有多少个 $x$ 的倍数。</li>
+<li><code>B x</code>：查询集合中有多少个 $x$ 的倍数，并删去所有 $x$ 的倍数（$M$ 除外）</li>
+<li><code>C x</code>：告知 $M$ 的值为 $x$，结束交互。</li>
+</ul>
+<p>交互至多 $10000$ 次。</p>
+<p>$N\leq 10^5$</p>
+</div>
+
+<p>将 $M$ 质因数分解为 $\prod{p_i^{a_i}}$。</p>
+<p>对于 $p_i\leq \sqrt{M}$，$a_i \geq 1$，而对于 $p_i &gt; \sqrt{M}$，$a_i=1$。</p>
+<p>用欧拉筛筛出 $[2,N]$ 的所有质数，对于 $p_i\leq \sqrt{M}$，可以先通过<code>B x</code> 删去其所有倍数，再用<code>A x</code> 判断 $M$ 是否为 $x$ 的倍数，并从 $1$ 向上枚举幂，直到 $M$ 不是 $p_i^{a_i+1}$ 的倍数，从而得到 $a_i$。</p>
+<p>而对于 $p_i &gt; \sqrt{M}$，如果也这么做，势必会超过 $10000$ 次的限制。</p>
+<p>但是考虑到 $a_i=1$，且最多只有一个 $p_i &gt; \sqrt{M}$，可以采取分块的方法。</p>
+<p>定义块大小为 $B$，先查询 <code>A 1</code>，得到当前集合的大小 $num_1$，再连续 <code>B x</code> 删除掉 $B$ 个质数的倍数，并得到应该（不考虑 $M$）被删除的个数 $num_2$。再查询 <code>A 1</code>，得到集合中实际剩余的个数 $num_3$。</p>
+<p>如果 $p_i$ 属于这个块，那么 $num_1-num_3\not = num_2$，再挨个 <code>A x</code> 判断是否为 $1$ 即可得到 $p_i$。</p>
+<h3 id="简易交互器"><a href="#简易交互器" class="headerlink" title="简易交互器"></a>简易交互器</h3><p>假设选手代码为 <code>a.cpp</code>，交互库为 <code>b.cpp</code>，则可以这样实现自动交互：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g++ a.cpp -o a -O2</span><br><span class="line">g++ b.cpp -o b -O2</span><br><span class="line">(./b &lt; /dev/fd/3 | ./a) 3&gt;&amp;1 | :</span><br></pre></td></tr></table></figure>
+
+<p>如果要看到额外的调试信息，可将其以输出到 <code>stderr</code>。</p>
+<h4 id="选手"><a href="#选手" class="headerlink" title="选手"></a>选手</h4><details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-13 12:53:11</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1406/problem/E</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, P = <span class="number">1</span>;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; Pri;</span><br><span class="line">bitset&lt;MAXN&gt; isnPri;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getPrime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!isnPri[i]) Pri.<span class="built_in">push_back</span>(i);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> u : Pri) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = i * u;</span><br><span class="line">            <span class="keyword">if</span> (x &gt; N) <span class="keyword">break</span>;</span><br><span class="line">            isnPri.<span class="built_in">set</span>(x);</span><br><span class="line">            <span class="keyword">if</span> (i % u == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> num;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">checkA</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;A %d\n&quot;</span>, x); <span class="built_in">fflush</span>(stdout);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">checkB</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;B %d\n&quot;</span>, x); <span class="built_in">fflush</span>(stdout);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">checkB</span>(x);</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> c = x; c * P &lt;= N; c *= x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="built_in">checkA</span>(c)) <span class="keyword">break</span>;</span><br><span class="line">		ans *= x;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">    <span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;C 1&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">getPrime</span>();</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; Pri[i] * Pri[i] &lt;= N; ++i) P *= <span class="built_in">get</span>(Pri[r = i]);</span><br><span class="line">    <span class="keyword">int</span> sz = <span class="built_in">sqrt</span>(Pri.<span class="built_in">size</span>() - r), num = <span class="built_in">checkA</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = r + <span class="number">1</span>, cnt = <span class="number">0</span>; i &lt; Pri.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">        num -= <span class="built_in">checkB</span>(Pri[i]);</span><br><span class="line">        <span class="keyword">if</span> (++cnt == sz || i == Pri.<span class="built_in">size</span>() - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> nnum = <span class="built_in">checkA</span>(<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (nnum != num) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = i - cnt + <span class="number">1</span>; j &lt;= i; ++j) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="built_in">checkA</span>(Pri[j])) &#123;</span><br><span class="line">                        P *= Pri[j];</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num = nnum;</span><br><span class="line">            cnt = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;C %d\n&quot;</span>, P); <span class="built_in">fflush</span>(stdout);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h4 id="交互库"><a href="#交互库" class="headerlink" title="交互库"></a>交互库</h4><details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100000</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">int</span> Vis[MAXN];</span><br><span class="line"><span class="keyword">int</span> cnt, x;</span><br><span class="line"><span class="keyword">char</span> ch;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, N);</span><br><span class="line">    <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;%d\n&quot;</span>, N);</span><br><span class="line">    <span class="built_in">fflush</span>(stdout);</span><br><span class="line">    cnt = N;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">&quot;%c %d&quot;</span>, &amp;ch, &amp;x)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">&#x27;A&#x27;</span> || ch == <span class="string">&#x27;B&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;%c %d\n&quot;</span>, ch, x);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, cnt);</span><br><span class="line">                <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;%d\n&quot;</span>, cnt);</span><br><span class="line">                <span class="built_in">fflush</span>(stdout);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= N; i += x) &#123;</span><br><span class="line">                total += !Vis[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, total);</span><br><span class="line">            <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;%d\n&quot;</span>, total);</span><br><span class="line">            <span class="keyword">if</span> (total &lt; <span class="number">10</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= N; i += x) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!Vis[i]) <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;\n&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">fflush</span>(stdout);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">&#x27;B&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= N; i += x) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i != M) Vis[i] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cnt = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) cnt += !Vis[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">&#x27;C&#x27;</span>) &#123;</span><br><span class="line">            cerr &lt;&lt; M &lt;&lt; <span class="string">&quot; vs &quot;</span> &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%A4%E4%BA%92-interactive/" rel="tag"># 交互(interactive)</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/05/03/cf-1405/" rel="prev" title="Codeforces Round &#35;668 (Div. 2) 解题报告">
+                  <i class="fa fa-chevron-left"></i> Codeforces Round &#35;668 (Div. 2) 解题报告
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/05/03/cf-1407/" rel="next" title="Codeforces Round &#35;669 (Div. 2) 解题报告">
+                  Codeforces Round &#35;669 (Div. 2) 解题报告 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiaqi Liao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.3" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script class="next-config" data-name="nprogress" type="application/json">{&quot;enable&quot;:true,&quot;spinner&quot;:true}</script>
+  <script src="/js/third-party/nprogress.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{&quot;enable&quot;:true,&quot;tags&quot;:&quot;none&quot;,&quot;js&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mathjax@3.1.2&#x2F;es5&#x2F;tex-mml-chtml.js&quot;}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

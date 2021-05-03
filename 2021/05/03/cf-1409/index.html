@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;skqliao.github.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:true,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:-1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<meta name="description" content="Codeforces Round &amp;#35;667 (Div. 3) 解题报告">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round &amp;#35;667 (Div. 3) 解题报告">
+<meta property="og:url" content="https://skqliao.github.io/2021/05/03/cf-1409/index.html">
+<meta property="og:site_name" content="Skqliao&#39;s Blog">
+<meta property="og:description" content="Codeforces Round &amp;#35;667 (Div. 3) 解题报告">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-03T03:05:39.000Z">
+<meta property="article:modified_time" content="2021-05-03T03:16:00.961Z">
+<meta property="article:author" content="Jiaqi Liao">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://skqliao.github.io/2021/05/03/cf-1409/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;skqliao.github.io&#x2F;2021&#x2F;05&#x2F;03&#x2F;cf-1409&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;05&#x2F;03&#x2F;cf-1409&#x2F;&quot;,&quot;title&quot;:&quot;Codeforces Round &amp;#35;667 (Div. 3) 解题报告&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>Codeforces Round &#35;667 (Div. 3) 解题报告 | Skqliao's Blog</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Skqliao's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-contests"><a href="/contests/" rel="section"><i class="fa fa-flag fa-fw"></i>比赛</a></li>
+        <li class="menu-item menu-item-to-dos"><a href="/to-dos/" rel="section"><i class="fa fa-check-square fa-fw"></i>待办</a></li>
+        <li class="menu-item menu-item-lists"><a href="/lists/" rel="section"><i class="fa fa-book fa-fw"></i>列表</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">相关链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%B5%9B%E7%8A%B6%E5%86%B5"><span class="nav-number">2.</span> <span class="nav-text">比赛状况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Yet-Another-Two-Integers-Problem"><span class="nav-number">3.</span> <span class="nav-text">A. Yet Another Two Integers Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Minimum-Product"><span class="nav-number">4.</span> <span class="nav-text">B. Minimum Product</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Yet-Another-Array-Restoration"><span class="nav-number">5.</span> <span class="nav-text">C. Yet Another Array Restoration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-Decrease-the-Sum-of-Digits"><span class="nav-number">6.</span> <span class="nav-text">D. Decrease the Sum of Digits</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-Two-Platforms"><span class="nav-number">7.</span> <span class="nav-text">E. Two Platforms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-Subsequences-of-Length-Two"><span class="nav-number">8.</span> <span class="nav-text">F. Subsequences of Length Two</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jiaqi Liao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jiaqi Liao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:skqliao@gmail.com" title="E-Mail → mailto:skqliao@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2841343424&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2841343424&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://skqliao.github.io/2021/05/03/cf-1409/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jiaqi Liao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skqliao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Codeforces Round &#35;667 (Div. 3) 解题报告
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-05-03 11:05:39 / 修改时间：11:16:00" itemprop="dateCreated datePublished" datetime="2021-05-03T11:05:39+08:00">2021-05-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Codeforces Round &#35;667 (Div. 3) 解题报告</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>这是一篇老文章，写于2020/09/14。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li><p>比赛链接：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1409">Dashboard</a></p>
+</li>
+<li><p>官方题解：<a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/82284">Editorial</a></p>
+</li>
+</ul>
+<h2 id="比赛状况"><a href="#比赛状况" class="headerlink" title="比赛状况"></a>比赛状况</h2><p>Solved: 6/6</p>
+<p>Rank: 53</p>
+<p>Rating change: +727 -&gt; 727</p>
+<h2 id="A-Yet-Another-Two-Integers-Problem"><a href="#A-Yet-Another-Two-Integers-Problem" class="headerlink" title="A. Yet Another Two Integers Problem"></a>A. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1409/problem/A">Yet Another Two Integers Problem</a></h2><div class="note info"><p>$T$ 组数据，每次输入 $a$ 和 $b$。求至少多少次操作可以将 $a$ 转化为 $b$。一次操作指的是 $a:=a\pm k(k\in[1,10])$。</p>
+<p>$T\leq 2\cdot 10^4,1\leq a,b\leq 10^9$</p>
+</div>
+
+<p>显然尽可能先用 $10$，最后处理一下剩余的部分。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-04 22:35:20</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1409/problem/A</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T, a, b;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">		cout &lt;&lt; (<span class="built_in">abs</span>(a - b) / <span class="number">10</span> + (<span class="built_in">abs</span>(a - b) % <span class="number">10</span> != <span class="number">0</span>)) &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="B-Minimum-Product"><a href="#B-Minimum-Product" class="headerlink" title="B. Minimum Product"></a>B. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1409/problem/B">Minimum Product</a></h2><div class="note info"><p>$T$ 组数据，每次输入 $a,b,x,y,n$，每次可以选择 $a$ 或 $b$ 将其减一，但必须时刻满足 $a\geq x,b\geq y$，该操作至多进行 $n$ 次。求 $a\cdot b$ 的最小值。</p>
+<p>$T\leq 2\cdot 10^4,1\leq a,b,x,y,n\leq 10^9$</p>
+</div>
+
+<p>“和一定，差越小，积越大”，要最小化乘积，就要先将一个数减到最小，然后再减另一个。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-04 22:38:02</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1409/problem/B</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> T, a, b, x, y, n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">get</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b, <span class="keyword">long</span> <span class="keyword">long</span> x, <span class="keyword">long</span> <span class="keyword">long</span> y)</span> </span>&#123;</span><br><span class="line">	a -= n;</span><br><span class="line">	<span class="keyword">if</span> (a &lt; x) &#123;</span><br><span class="line">		b -= (x - a);</span><br><span class="line">		a = x;</span><br><span class="line">	&#125;</span><br><span class="line">	b = <span class="built_in">max</span>(b, y);</span><br><span class="line">	<span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b &gt;&gt; x &gt;&gt; y &gt;&gt; n;</span><br><span class="line">		cout &lt;&lt; <span class="built_in">min</span>(<span class="built_in">get</span>(a, b, x, y), <span class="built_in">get</span>(b, a, y, x)) &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="C-Yet-Another-Array-Restoration"><a href="#C-Yet-Another-Array-Restoration" class="headerlink" title="C. Yet Another Array Restoration"></a>C. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1409/problem/C">Yet Another Array Restoration</a></h2><div class="note info"><p>有一个未知的长为 $N$ 的等差序列 $A[1\cdots N]$，其中都是正数。已知 $x,y\in A[1\cdots N]$，求 $max(A[1\cdots N])$ 的最小值。</p>
+</div>
+
+<p>枚举 $y-x$ 的因数为公差，然后在保证最小值为正数的前提下将 $x,y$ 尽可能放到最后。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-04 22:47:41</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1409/problem/C</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, n, x, y, z;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (z / a + <span class="number">1</span> &gt; n) <span class="keyword">return</span> INT_MAX;</span><br><span class="line">	<span class="keyword">int</span> mn = x - x / a * a;</span><br><span class="line">	<span class="keyword">if</span> (!mn) mn += a;</span><br><span class="line">	<span class="keyword">int</span> num = (y - mn) / a + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (num &gt;= n) <span class="keyword">return</span> y;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> y + (n - num) * a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		cin &gt;&gt; n &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		z = y - x;</span><br><span class="line">		<span class="keyword">int</span> ans = INT_MAX, dv;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="built_in">sqrt</span>(z) + <span class="number">1</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (z % i == <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">int</span> tmp = <span class="built_in">get</span>(i);</span><br><span class="line">				<span class="keyword">if</span> (ans &gt; tmp) &#123;</span><br><span class="line">					ans = tmp;</span><br><span class="line">					dv = i;</span><br><span class="line">				&#125;</span><br><span class="line">				tmp = <span class="built_in">get</span>(z / i);</span><br><span class="line">				<span class="keyword">if</span> (ans &gt; tmp) &#123;</span><br><span class="line">					ans = tmp;</span><br><span class="line">					dv = z / i;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = ans - dv * (n - <span class="number">1</span>); i &lt;= ans; i += dv) cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="D-Decrease-the-Sum-of-Digits"><a href="#D-Decrease-the-Sum-of-Digits" class="headerlink" title="D. Decrease the Sum of Digits"></a>D. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1409/problem/D">Decrease the Sum of Digits</a></h2><div class="note info"><p>$T$ 组数据，每次输入一个数 $x$。令 $z=x+y$，求非负数 $y$ 的最小值，满足 $z$ 的各位数字之和不大于 $s$。</p>
+<p>$T\leq 2\cdot 10^4,1\leq x\leq 10^{18},1\leq s\leq 162$</p>
+</div>
+
+<p>从个位开始，每次进一位并将该位置为 $0$，直到满足各位数字之和不大于 $s$ 为止。</p>
+<p>复杂度 $O(\log{x})$。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-04 23:06:31</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1409/problem/D</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> t, x, y;</span><br><span class="line"><span class="keyword">int</span> len;</span><br><span class="line"><span class="keyword">char</span> a[<span class="number">20</span>];</span><br><span class="line"><span class="keyword">int</span> s[<span class="number">20</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; t;</span><br><span class="line">	<span class="keyword">while</span> (t--) &#123;</span><br><span class="line">		cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		<span class="built_in">sprintf</span>(a, <span class="string">&quot;%lld&quot;</span>, x);</span><br><span class="line">		len = <span class="built_in">strlen</span>(a);</span><br><span class="line">		s[<span class="number">0</span>] = a[<span class="number">0</span>] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; ++i) s[i] = s[i - <span class="number">1</span>] + a[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		<span class="keyword">if</span> (s[len - <span class="number">1</span>] &lt;= y) &#123;</span><br><span class="line">			cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">1</span>; --i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i] == <span class="string">&#x27;9&#x27;</span>) <span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">int</span> cur = s[i - <span class="number">1</span>] + a[i] - <span class="string">&#x27;0&#x27;</span> + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (cur &lt;= y) &#123;</span><br><span class="line">				a[i] += <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; ++j) a[j] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">				flag = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (!flag) &#123;</span><br><span class="line">			<span class="keyword">if</span> (a[<span class="number">0</span>] != <span class="string">&#x27;9&#x27;</span> &amp;&amp; a[<span class="number">0</span>] + <span class="number">1</span> - <span class="string">&#x27;0&#x27;</span> &lt;= y) &#123;</span><br><span class="line">				a[<span class="number">0</span>]++;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; ++i) a[i] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				a[<span class="number">0</span>] = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len; ++i) a[i] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">				++len;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> z = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; ++i) z = z * <span class="number">10</span> + a[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		cout &lt;&lt; z - x &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="E-Two-Platforms"><a href="#E-Two-Platforms" class="headerlink" title="E. Two Platforms"></a>E. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1409/problem/E">Two Platforms</a></h2><div class="note info"><p>$T$ 组数据，输入 $N$ 个点的坐标 $(x_i,y_i)$，以及 $K$。可以选择任意两个横坐标 $x_a,x_b$，则横坐标位于 $[x_a,x_a+K]$ 和 $[x_b,x_b+K]$ 的所有点会被收集。求最多收集多少个点。</p>
+<p>$T\leq 2\cdot 10^4,\sum{N}\leq 2\cdot 10^5,K\leq 10^5,1\leq x_i\leq 10^9$</p>
+</div>
+
+<p>对坐标离散化，预处理出所有 $[x_i,x_i+K]$ 的点个数 $P_i$。从左往右枚举 $x_a$，然后算出 $[x_a+K,+\infty]$ 中最大的 $P_i$ 对应 $[x_b,x_b+K]$。</p>
+<p>复杂度 $O(T\cdot N)$。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-04 23:27:56</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1409/problem/E</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">2e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, n, k;</span><br><span class="line"><span class="keyword">int</span> x[MAXN], y[MAXN];</span><br><span class="line"><span class="keyword">int</span> r[MAXN], num[MAXN];</span><br><span class="line"><span class="keyword">int</span> id[MAXN], ans[MAXN], mx[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">upper_bound</span>(x + <span class="number">1</span>, x + n + <span class="number">1</span>, a) - x - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; t;</span><br><span class="line">	<span class="keyword">while</span> (t--) &#123;</span><br><span class="line">		cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) cin &gt;&gt; x[i];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) cin &gt;&gt; y[i];</span><br><span class="line">		<span class="built_in">sort</span>(x + <span class="number">1</span>, x + n + <span class="number">1</span>);</span><br><span class="line">		<span class="built_in">memset</span>(num, <span class="number">0</span>, <span class="keyword">sizeof</span> num);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (x[i] == x[i - <span class="number">1</span>]) id[i] = id[i - <span class="number">1</span>];</span><br><span class="line">			<span class="keyword">else</span> id[i] = id[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">			++num[id[i]];</span><br><span class="line">		&#125;</span><br><span class="line">		n = <span class="built_in">unique</span>(x + <span class="number">1</span>, x + n + <span class="number">1</span>) - x - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) num[i] += num[i - <span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">			ans[i] = num[r[i] = <span class="built_in">get</span>(x[i] + k)] - num[i - <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		mx[n + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; --i) &#123;</span><br><span class="line">			mx[i] = <span class="built_in">max</span>(mx[i + <span class="number">1</span>], ans[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">			res = <span class="built_in">max</span>(res, ans[i] + mx[r[i] + <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="F-Subsequences-of-Length-Two"><a href="#F-Subsequences-of-Length-Two" class="headerlink" title="F. Subsequences of Length Two"></a>F. <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1409/problem/F">Subsequences of Length Two</a></h2><div class="note info"><p>输入母串 $S$ 和子串 $T$，以及整数 $K$。要求修改 $S$ 的至多 $K$ 位，使得 $S$ 的与 $T$ 相同的子序列的数量最大。</p>
+<p>$K\leq |S|\leq 200, |T|=2$</p>
+</div>
+
+<p>定义 $F[i][j][k]$ 表示 $S$ 的前 $i$ 位，进行了 $j$ 次修改，当前有 $k$ 个 $T[0]$ 的子序列为 $T$ 的数量，然后转移即可。</p>
+<p>复杂度 $O(|S|^2\cdot K)$。</p>
+<details class="note success no-icon"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code Information</span></span><br><span class="line"><span class="comment"> * Author: little_skqliao</span></span><br><span class="line"><span class="comment"> * Time: 2020-09-04 23:50:14</span></span><br><span class="line"><span class="comment"> * Url: https://codeforces.com/contest/1409/problem/F</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">200</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, K;</span><br><span class="line">string s, t;</span><br><span class="line"><span class="keyword">int</span> f[MAXN][MAXN][MAXN];</span><br><span class="line"><span class="keyword">bool</span> b[MAXN][MAXN][MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; N &gt;&gt; K &gt;&gt; s &gt;&gt; t;</span><br><span class="line">	s = <span class="string">&quot;0&quot;</span> + s;</span><br><span class="line">	<span class="keyword">if</span> (t[<span class="number">0</span>] == t[<span class="number">1</span>]) &#123;</span><br><span class="line">		<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (s[i] == t[<span class="number">0</span>]) ++num;</span><br><span class="line">		&#125;</span><br><span class="line">		num = <span class="built_in">min</span>(num + K, N);</span><br><span class="line">		cout &lt;&lt; num * (num - <span class="number">1</span>) / <span class="number">2</span> &lt;&lt; endl;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		b[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="built_in">min</span>(i, K); ++j) &#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt;= i; ++k) &#123;</span><br><span class="line">					<span class="keyword">if</span> (s[i] == t[<span class="number">1</span>] &amp;&amp; b[i - <span class="number">1</span>][j][k]) &#123;</span><br><span class="line">						f[i][j][k] = <span class="built_in">max</span>(f[i][j][k], f[i - <span class="number">1</span>][j][k] + k);</span><br><span class="line">						b[i][j][k] = <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (s[i] != t[<span class="number">1</span>] &amp;&amp; b[i - <span class="number">1</span>][j - <span class="number">1</span>][k]) &#123;</span><br><span class="line">						f[i][j][k] = <span class="built_in">max</span>(f[i][j][k], f[i - <span class="number">1</span>][j - <span class="number">1</span>][k] + k);</span><br><span class="line">						b[i][j][k] = <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (s[i] != t[<span class="number">1</span>] &amp;&amp; b[i - <span class="number">1</span>][j][k]) &#123;</span><br><span class="line">						f[i][j][k] = <span class="built_in">max</span>(f[i][j][k], f[i - <span class="number">1</span>][j][k]);</span><br><span class="line">						b[i][j][k] = <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (s[i] == t[<span class="number">0</span>] &amp;&amp; b[i - <span class="number">1</span>][j][k - <span class="number">1</span>]) &#123;</span><br><span class="line">						f[i][j][k] = <span class="built_in">max</span>(f[i][j][k], f[i - <span class="number">1</span>][j][k - <span class="number">1</span>]);</span><br><span class="line">						b[i][j][k] = <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (s[i] != t[<span class="number">0</span>] &amp;&amp; b[i - <span class="number">1</span>][j - <span class="number">1</span>][k - <span class="number">1</span>]) &#123;</span><br><span class="line">						f[i][j][k] = <span class="built_in">max</span>(f[i][j][k], f[i - <span class="number">1</span>][j - <span class="number">1</span>][k - <span class="number">1</span>]);</span><br><span class="line">						b[i][j][k] = <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (s[i] != t[<span class="number">0</span>] &amp;&amp; b[i - <span class="number">1</span>][j][k]) &#123;</span><br><span class="line">						f[i][j][k] = <span class="built_in">max</span>(f[i][j][k], f[i - <span class="number">1</span>][j][k]);</span><br><span class="line">						b[i][j][k] = <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= K; ++i) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= N; ++j) &#123;</span><br><span class="line">				ans = <span class="built_in">max</span>(ans, f[N][i][j]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/05/03/cf-1407/" rel="prev" title="Codeforces Round &#35;669 (Div. 2) 解题报告">
+                  <i class="fa fa-chevron-left"></i> Codeforces Round &#35;669 (Div. 2) 解题报告
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiaqi Liao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.3" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script class="next-config" data-name="nprogress" type="application/json">{&quot;enable&quot;:true,&quot;spinner&quot;:true}</script>
+  <script src="/js/third-party/nprogress.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{&quot;enable&quot;:true,&quot;tags&quot;:&quot;none&quot;,&quot;js&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mathjax@3.1.2&#x2F;es5&#x2F;tex-mml-chtml.js&quot;}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
