@@ -28,7 +28,7 @@
 <meta property="og:description" content="AtCoder上的每日一题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-04T15:43:49.000Z">
-<meta property="article:modified_time" content="2021-05-05T07:11:36.683Z">
+<meta property="article:modified_time" content="2021-05-05T07:20:59.562Z">
 <meta property="article:author" content="Jiaqi Liao">
 <meta name="twitter:card" content="summary">
 
@@ -256,7 +256,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-05 15:11:36" itemprop="dateModified" datetime="2021-05-05T15:11:36+08:00">2021-05-05</time>
+        <time title="修改时间：2021-05-05 15:20:59" itemprop="dateModified" datetime="2021-05-05T15:20:59+08:00">2021-05-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -350,7 +350,7 @@
 </details>
 
 <h4 id="Subtask-3"><a href="#Subtask-3" class="headerlink" title="Subtask 3"></a>Subtask 3</h4><p>倍增的想法是正确的，但是没必要通过矩阵乘法的形式。想复杂了，尴尬。。</p>
-<p>设 $f[i][j]$ 表示 $2^i$ 位数中 $\bmod m=j$ 的方案数，则 $\forall k\in[0, m), f[i][j]\rightarrow f[i+1][(j*10^{2^i}+k)\bmod m]$。</p>
+<p>设 $f[i][j]$ 表示 $2^i$ 位数中 $\bmod m=j$ 的方案数，则 $f[i][j]\rightarrow f[i+1][(j*10^{2^i}+k)\bmod m]$。</p>
 <p>每次转移的复杂度是 $O(m^2)$ 的，整体复杂度为 $O(\log{n}\times m^2)$。</p>
 <p>用FFT可以做到单次转移 $O(m\log{m})$，不过我不太会。</p>
 <details class="note success no-icon"><summary><p>Code</p>
